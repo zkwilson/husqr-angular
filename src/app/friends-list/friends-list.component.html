@@ -1,1 +1,6 @@
-<p>friends-list works!</p>
+<div class="friends-contatiner">
+  <h1>Friends</h1>
+</div>
+<div class="friends-list">
+ <app-friend *ngFor="let friend of friends; trackBy: trackById" name = {{friend.name}} location = {{friend.location}}></app-friend>
+</div>

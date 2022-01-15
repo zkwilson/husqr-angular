@@ -8,12 +8,12 @@ import { ContentComponent } from './content/content.component';
 import { HusqComponent } from './husq/husq.component';
 import { FooterComponent } from './footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FriendsComponent } from './friends/friends.component';
 import { ProfileComponent } from './profile/profile.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import {FormsModule} from "@angular/forms";
 import { FriendsListComponent } from './friends-list/friends-list.component';
+import { FriendComponent } from './friend/friend.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +22,11 @@ import { FriendsListComponent } from './friends-list/friends-list.component';
     ContentComponent,
     HusqComponent,
     FooterComponent,
-    FriendsComponent,
     ProfileComponent,
     PageNotFoundComponent,
     TimelineComponent,
-    FriendsListComponent
+    FriendsListComponent,
+    FriendComponent
   ],
   imports: [
     BrowserModule,
