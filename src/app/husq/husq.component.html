@@ -1,4 +1,4 @@
-<div class="col-6 border border-secondary bg-dark text-light" id="husq">
+<div class="col-6 border border-secondary bg-light text-dark" id="husq">
   <div class="header">
     <img src="https://avatars.dicebear.com/api/initials/{{name}}.svg">
     <p class="husq-name">{{name}}</p>
@@ -9,7 +9,7 @@
     <p>{{reply}}</p>
   </div>
   <div class="input-group mb-3">
-    <input (ngModel)="tempReply" type="text" class="form-control" placeholder="Reply to {{name}}" >
+    <input [(ngModel)]="tempReply" type="text" class="form-control" placeholder="Reply to {{name}}" >
     <div class="input-group-append">
       <button (click)="saveReply()" class="input-group-text">Reply</button>
     </div>

@@ -1,4 +1,4 @@
 <h1>What people are husq'ing...</h1>
-<app-husq *ngFor="let husq of husqs;"
+<app-husq *ngFor="let husq of husqs; trackBy:trackById"
           name={{husq.name}}
           message={{husq.message}} class="row justify-content-center"></app-husq>

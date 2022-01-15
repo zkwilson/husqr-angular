@@ -12,6 +12,8 @@ import { FriendsComponent } from './friends/friends.component';
 import { ProfileComponent } from './profile/profile.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { TimelineComponent } from './timeline/timeline.component';
+import {FormsModule} from "@angular/forms";
+import { FriendsListComponent } from './friends-list/friends-list.component';
 
 @NgModule({
   declarations: [
@@ -23,12 +25,14 @@ import { TimelineComponent } from './timeline/timeline.component';
     FriendsComponent,
     ProfileComponent,
     PageNotFoundComponent,
-    TimelineComponent
+    TimelineComponent,
+    FriendsListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
