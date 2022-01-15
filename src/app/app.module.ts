@@ -8,6 +8,10 @@ import { ContentComponent } from './content/content.component';
 import { HusqComponent } from './husq/husq.component';
 import { FooterComponent } from './footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FriendsComponent } from './friends/friends.component';
+import { ProfileComponent } from './profile/profile.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { TimelineComponent } from './timeline/timeline.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +19,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HeaderComponent,
     ContentComponent,
     HusqComponent,
-    FooterComponent
+    FooterComponent,
+    FriendsComponent,
+    ProfileComponent,
+    PageNotFoundComponent,
+    TimelineComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
