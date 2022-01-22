@@ -1,0 +1,14 @@
+<div class="col-6 border border-secondary bg-light text-dark" id="compose">
+  <div class="compose-header">
+    <img src="https://avatars.dicebear.com/api/initials/Zane Wilson.svg">
+    <p class="compose-name">Zane Wilson</p>
+  </div>
+  <div class="compose-body">
+    <textarea [(ngModel)]="message" class="compose-message" placeholder="Enter text"></textarea>
+    <button (click)="addHusq()" class="compose-message_btn" [disabled]="!message.length || message.length > 240">Husq</button>
+  </div>
+  <div class="input-group mb-3">
+   <span>{{ message.length }}</span>
+  </div>
+</div>
+
