@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {ProfileComponent} from "./profile/profile.component";
-import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
-import {TimelineComponent} from "./timeline/timeline.component";
-import {FriendsListComponent} from "./friends-list/friends-list.component";
+import {ProfileComponent} from "./components/profile/profile.component";
+import {PageNotFoundComponent} from "./components/page-not-found/page-not-found.component";
+import {TimelineComponent} from "./components/timeline/timeline.component";
+import {FriendsListComponent} from "./components/friends-list/friends-list.component";
 
 const routes: Routes = [
 

@@ -3,17 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { ContentComponent } from './content/content.component';
-import { HusqComponent } from './husq/husq.component';
-import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
+import { ContentComponent } from './components/content/content.component';
+import { HusqComponent } from './components/husq/husq.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ProfileComponent } from './profile/profile.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { TimelineComponent } from './timeline/timeline.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { TimelineComponent } from './components/timeline/timeline.component';
 import {FormsModule} from "@angular/forms";
-import { FriendsListComponent } from './friends-list/friends-list.component';
-import { FriendComponent } from './friend/friend.component';
+import { FriendsListComponent } from './components/friends-list/friends-list.component';
+import { FriendComponent } from './components/friend/friend.component';
+import {TimelineService} from "./services/timeline.service";
 
 @NgModule({
   declarations: [
@@ -34,7 +35,9 @@ import { FriendComponent } from './friend/friend.component';
     NgbModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    TimelineService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

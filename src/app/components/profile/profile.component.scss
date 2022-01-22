@@ -1,0 +1,69 @@
+//.profile-container {
+//  max-width: 70%;
+//  margin: auto;
+//}
+//
+//.header {
+//  display: flex;
+//  justify-content: center;
+//}
+//img{
+//  max-width: 175px;
+//  max-height: 175px;
+//  margin-right: 1em;
+//  margin-top: 1em;
+//}
+//
+//span {
+//  font-weight: bold;
+//}
+//
+img {
+  width: 100%;
+}
+.header {
+  font-size: 2em;
+  border-bottom: red;
+  border-bottom-style: solid;
+  margin-bottom: 1em;
+}
+
+span {
+  font-weight: bold;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  text-align: center;
+  float: left;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+
+
