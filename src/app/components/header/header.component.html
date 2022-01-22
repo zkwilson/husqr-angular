@@ -15,7 +15,7 @@
         <a class="nav-link" routerLink="/friends" routerLinkActive="active">Friends</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/profile" routerLinkActive="active">Profile</a>
+        <a class="nav-link" [routerLink]="['/profile', activeUserId]" routerLinkActive="active">Profile</a>
       </li>
     </ul>
   </div>

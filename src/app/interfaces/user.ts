@@ -3,7 +3,7 @@ export interface User {
   name: string
   location: string
   age?: number
-  aboutMe?: string
-  like?: string
+  about?: string
+  likes?: string
   dislikes?: string
 }

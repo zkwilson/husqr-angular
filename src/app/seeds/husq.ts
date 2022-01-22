@@ -5,7 +5,7 @@ export const initialHusqs: Husq[] = [
   {
     id: '1',
     userId: '1',
-    name: 'Nathan Campbell',
+    name: 'Zane Wilson',
     time: new Date(),
     message: 'Testing 123123123'
   },

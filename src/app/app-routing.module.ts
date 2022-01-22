@@ -10,7 +10,7 @@ const routes: Routes = [
 
   {path: '', component: TimelineComponent, pathMatch: 'full'},
   {path: 'friends', component: FriendsListComponent, pathMatch: 'full'},
-  {path: 'profile', component: ProfileComponent, pathMatch: 'full'},
+  {path: 'profile/:userId', component: ProfileComponent },
   {path: 'compose', component: ComposeComponent, pathMatch: 'full'},
   {path: 'timeline', component: TimelineComponent, pathMatch: 'full'},
   {path: '**', component: PageNotFoundComponent}

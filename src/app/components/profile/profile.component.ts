@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
+import {User} from "../../interfaces/user";
+import {UsersService} from "../../services/users.service";
 
 @Component({
   selector: 'app-profile',
@@ -6,15 +9,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
+  profile: User | undefined
 
-  name: string = 'Zane Wilson';
-  age: string = '28';
-  location: string = 'Omaha, NE';
-  about: string = 'This is my about me section.';
-  likes: string = 'I like stuff.';
-  dislikes: string = 'I dislike stuff.';
-
-  constructor() { }
+  constructor(private router: ActivatedRoute,
+              private userService: UsersService) {
+    this.router.paramMap.subscribe((params) => {
+      const id = params.get('userId')
+      if (id) {
+        this.profile = this.userService.getUserById(id)
+      }
+    })
+  }
 
   ngOnInit(): void {
   }

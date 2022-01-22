@@ -17,13 +17,14 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <div class="profile-container">
-    <h1 class="header">Profile</h1>
+    <h1 *ngIf="profile" class="header">{{ profile.name}}'s Profile</h1>
+    <h1 *ngIf="!profile">No User Found</h1>
     <div>
-<div class="card">
-  <img src="https://avatars.dicebear.com/api/gridy/zane.svg">
-  <h1>{{name}}</h1>
-  <p class="title">{{location}}</p>
-  <p><span>Age: </span>{{age}}</p>
+<div *ngIf="profile" class="card">
+  <img src="https://avatars.dicebear.com/api/gridy/{{ profile.name }}.svg">
+  <h1>{{profile.name}}</h1>
+  <p class="title">{{profile.location}}</p>
+  <p><span>Age: </span>{{profile.age}}</p>
   <a href="http://instagram.com"><i class="fa fa-instagram"></i></a>
   <a href="http://linkedin.com"><i class="fa fa-linkedin"></i></a>
   <a href="http://facebook.com"><i class="fa fa-facebook"></i></a>
