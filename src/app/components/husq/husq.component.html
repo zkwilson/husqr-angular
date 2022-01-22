@@ -1,15 +1,15 @@
-<div class="col-6 border border-secondary bg-light text-dark" id="husq">
+<div *ngIf="husqObj" class="col-6 border border-secondary bg-light text-dark" id="husq">
   <div class="header">
-    <img src="https://avatars.dicebear.com/api/initials/{{name}}.svg">
-    <p class="husq-name">{{name}}</p>
-    <p class="husq-time">{{time.toLocaleString()}}</p>
+    <img src="https://avatars.dicebear.com/api/initials/{{husqObj.name}}.svg">
+    <p class="husq-name">{{husqObj.name}}</p>
+    <p class="husq-time">{{husqObj.time.toLocaleString()}}</p>
   </div>
   <div class="husq-body">
-    <p>{{message}}</p>
+    <p>{{husqObj.message}}</p>
     <p>{{reply}}</p>
   </div>
   <div class="input-group mb-3">
-    <input [(ngModel)]="tempReply" type="text" class="form-control" placeholder="Reply to {{name}}" >
+    <input [(ngModel)]="tempReply" type="text" class="form-control" placeholder="Reply to {{husqObj.name}}" >
     <div class="input-group-append">
       <button (click)="saveReply()" class="input-group-text">Reply</button>
     </div>

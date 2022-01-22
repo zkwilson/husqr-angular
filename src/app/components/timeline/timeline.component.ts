@@ -25,18 +25,9 @@ export class TimelineComponent implements OnInit, OnDestroy {
     this.husqs$.unsubscribe()
   }
 
-  trackById(index: number, husq: Husq): number {
+  trackById(index: number, husq: Husq): string {
     return husq.id;
   }
 
-  addHusq() {
-    this.timelineService.addHusq(
-      {
-        id: 3,
-        name: 'Zane Wilson',
-        message: 'This is an added Husq'
-      }
-    )
-  }
 
 }

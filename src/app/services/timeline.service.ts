@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Husq } from "../interfaces/husq";
 import { initialHusqs } from "../seeds/husq";
-import {BehaviorSubject} from "rxjs";
+import { BehaviorSubject } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,8 @@ export class TimelineService {
 
   constructor() { }
 
-  private _setHusq(husqs: Husq[]) {
+
+  private _setHusqs(husqs: Husq[]) {
     this._husqSource.next(husqs)
   }
 
@@ -22,6 +23,14 @@ export class TimelineService {
 
   addHusq(husq: Husq) {
     const husqs = [...this.getHusq(), husq]
-    this._setHusq(husqs)
+    this._setHusqs(husqs)
   }
+
+  removeHusq(husqId: string): void {
+    const husqs = [
+      ...this.getHusq().filter(husq => husq.id !== husqId)
+    ]
+    this._setHusqs(husqs)
+  }
+
 }

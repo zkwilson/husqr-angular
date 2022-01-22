@@ -15,6 +15,8 @@ import {FormsModule} from "@angular/forms";
 import { FriendsListComponent } from './components/friends-list/friends-list.component';
 import { FriendComponent } from './components/friend/friend.component';
 import {TimelineService} from "./services/timeline.service";
+import { ComposeComponent } from './components/compose/compose.component';
+import {UsersService} from "./services/users.service";
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import {TimelineService} from "./services/timeline.service";
     PageNotFoundComponent,
     TimelineComponent,
     FriendsListComponent,
-    FriendComponent
+    FriendComponent,
+    ComposeComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,8 @@ import {TimelineService} from "./services/timeline.service";
     FormsModule
   ],
   providers: [
-    TimelineService
+    TimelineService,
+    UsersService
   ],
   bootstrap: [AppComponent]
 })

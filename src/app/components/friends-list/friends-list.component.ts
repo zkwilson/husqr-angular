@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Person} from "../../interfaces/person";
-import {people} from "../../seeds/people";
+import { User } from "../../interfaces/user";
+import {initialUsers} from "../../seeds/users";
 
 @Component({
   selector: 'app-friends-list',
@@ -9,7 +9,7 @@ import {people} from "../../seeds/people";
 })
 export class FriendsListComponent implements OnInit {
 
-  friends: Person[] = people
+  friends: User[] = initialUsers
 
   constructor() { }
 
