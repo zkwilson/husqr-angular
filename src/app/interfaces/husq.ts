@@ -1,4 +1,4 @@
-export interface Husqs {
+export interface Husq {
   id: number
   name: string
   message: string

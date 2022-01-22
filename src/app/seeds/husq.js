@@ -2,7 +2,7 @@
 export const initialHusqs = [
   {
     id: 1,
-    name: 'Zane Wilson',
+    name: 'Eric Cornell',
     message: 'Testing 123123123'
   },
   {
