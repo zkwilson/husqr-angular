@@ -2,7 +2,7 @@
   <div class="header">
     <img src="https://avatars.dicebear.com/api/initials/{{ friendObj.name }}.svg">
   <div class="friend-body">
-    <p>{{ friendObj.name }}</p>
+    <a [routerLink]="['/profile', friendObj.id]">{{ friendObj.name }}</a>
     <p>{{ friendObj.location }}</p>
   </div>
   </div>

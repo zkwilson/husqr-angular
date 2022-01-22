@@ -3,6 +3,7 @@ import { User } from "../../interfaces/user";
 import {initialUsers} from "../../seeds/users";
 import {UsersService} from "../../services/users.service";
 import {Subscription} from "rxjs";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-friends-list',
