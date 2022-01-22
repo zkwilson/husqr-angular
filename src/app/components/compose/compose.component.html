@@ -5,10 +5,10 @@
   </div>
   <div class="compose-body">
     <textarea [(ngModel)]="message" class="compose-message" placeholder="Enter text"></textarea>
-    <button (click)="addHusq()" class="compose-message_btn" [disabled]="!message.length || message.length > 240">Husq</button>
+    <button (click)="addHusq()" class="input-group-text" [disabled]="!message.length || message.length > 240">Husq</button>
   </div>
-  <div class="input-group mb-3">
-   <span>{{ message.length }}</span>
+  <div class="input-group mb-3" id="character-limit">
+   <span>{{ message.length }} / 240 characters</span>
   </div>
 </div>
 

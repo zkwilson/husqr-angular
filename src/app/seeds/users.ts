@@ -1,20 +1,19 @@
-import { v4 as uuidv4 } from "uuid";
 import {User} from "../interfaces/user";
 
 
 export const initialUsers: User[] = [
   {
-    id: uuidv4(),
+    id: '1',
     name: 'Nathan Campbell',
     location: 'Omaha, NE'
   },
   {
-    id: uuidv4(),
+    id: '2',
     name: 'Zaeem Haq',
     location: 'Omaha, NE'
   },
   {
-    id: uuidv4(),
+    id: '3',
     name: 'Allie Herink',
     location: 'Bellevue, NE'
   }

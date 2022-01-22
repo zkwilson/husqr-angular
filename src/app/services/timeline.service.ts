@@ -33,4 +33,13 @@ export class TimelineService {
     this._setHusqs(husqs)
   }
 
+  getHusqById(id: string): Husq | undefined {
+    return this.getHusq().find(husq => husq.id === id)
+  }
+
+  getHusqsByUserId(userId: string): Husq[] {
+    return this.getHusq().filter(husq => husq.userId === userId)
+  }
 }
+
+

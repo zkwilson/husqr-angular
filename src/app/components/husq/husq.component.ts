@@ -18,6 +18,9 @@ export class HusqComponent implements OnInit {
   constructor(private timelineService: TimelineService) { }
 
   ngOnInit(): void {
+
+    //console.log(this.timelineService.getHusqsByUserId('1'))
+    console.log(this.timelineService.getHusqById('2'))
   }
 
   saveReply(): void {

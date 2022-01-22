@@ -1,0 +1,41 @@
+img {
+  max-height: 50px;
+  max-width: 50px;
+  margin-top: .5em;
+  margin-bottom: .5em;
+  margin-left: .5em;
+}
+
+p {
+  margin-left: .5em;
+  display: inline;
+}
+
+textarea {
+  width: 400px;
+  //margin-left: 1em;
+}
+
+#compose {
+  margin: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.compose-body {
+  display: flex;
+  justify-content: center;
+  padding: 0em .5em;
+}
+
+button {
+  max-height: 100px;
+  max-width: 100px;
+}
+#character-limit {
+  display: flex;
+  justify-content: flex-end;
+  span {
+    margin-right: 1em;
+  }
+
+}

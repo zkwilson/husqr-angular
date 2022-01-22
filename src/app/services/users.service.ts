@@ -32,4 +32,8 @@ export class UsersService {
     this._setUsers(users)
   }
 
+  getUserById(id: string): User | undefined {
+    return this.getUsers().find(user => user.id === id)
+  }
+
 }

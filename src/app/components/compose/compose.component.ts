@@ -20,6 +20,7 @@ export class ComposeComponent implements OnInit {
     if (this.message) {
       this.timelineService.addHusq({
         id: uuidv4,
+        userId: '4',
         name: 'Zane Wilson',
         time: new Date(),
         message: this.message

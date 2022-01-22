@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from "../../interfaces/user";
 import {initialUsers} from "../../seeds/users";
+import {UsersService} from "../../services/users.service";
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-friends-list',
@@ -9,15 +11,21 @@ import {initialUsers} from "../../seeds/users";
 })
 export class FriendsListComponent implements OnInit {
 
-  friends: User[] = initialUsers
+  friends$: Subscription
+  friends: User[] | undefined
 
-  constructor() { }
+  constructor(private userService: UsersService) {
+    this.friends$ = this.userService.users$.subscribe(friends => this.friends = friends)
+  }
 
   ngOnInit(): void {
   }
 
-  trackById(index: number, husq: any) {
-    return husq.id;
+  ngOnDestroy() {
+    this.friends$.unsubscribe();
   }
 
+  trackById(index: number, friend: any): number {
+    return friend.id;
+  }
 }
