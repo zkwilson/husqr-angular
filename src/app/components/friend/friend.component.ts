@@ -10,7 +10,6 @@ import {UsersService} from "../../services/users.service";
 })
 export class FriendComponent implements OnInit {
   @Input() friendObj: User | undefined
-  // profile: User | undefined
 
   constructor(private router: Router) {
 
@@ -19,8 +18,12 @@ export class FriendComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // navigateToUser(id: string): void {
-  //
-  // }
+  navigateToUser() {
+    const id = this.friendObj && this.friendObj.id
+    if (id) {
+      this.router.navigate(['/profile', id])
+    }
+  }
+
 
 }

@@ -5,7 +5,7 @@ import {BehaviorSubject} from "rxjs";
   providedIn: 'root'
 })
 export class ActiveUserService {
-  private readonly _activeUserSource = new BehaviorSubject<string>('2');
+  private readonly _activeUserSource = new BehaviorSubject<string>('1');
   readonly _activeUser$ = this._activeUserSource.asObservable();
 
   constructor() { }
