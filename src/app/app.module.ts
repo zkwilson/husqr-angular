@@ -11,12 +11,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProfileComponent } from './components/profile/profile.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { TimelineComponent } from './components/timeline/timeline.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { FriendsListComponent } from './components/friends-list/friends-list.component';
 import { FriendComponent } from './components/friend/friend.component';
 import {TimelineService} from "./services/timeline.service";
 import { ComposeComponent } from './components/compose/compose.component';
 import {UsersService} from "./services/users.service";
+import { EditComponent } from './components/edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -30,13 +31,15 @@ import {UsersService} from "./services/users.service";
     TimelineComponent,
     FriendsListComponent,
     FriendComponent,
-    ComposeComponent
+    ComposeComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     TimelineService,

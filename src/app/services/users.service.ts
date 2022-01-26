@@ -36,4 +36,9 @@ export class UsersService {
     return this.getUsers().find(user => user.id === id)
   }
 
+  editUser(updatedUser: User): void {
+    const users = [...this.getUsers().filter(user => user.id !== updatedUser.id), updatedUser]
+    this._setUsers(users)
+  }
+
 }

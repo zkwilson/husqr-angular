@@ -5,6 +5,7 @@ import {PageNotFoundComponent} from "./components/page-not-found/page-not-found.
 import {TimelineComponent} from "./components/timeline/timeline.component";
 import {FriendsListComponent} from "./components/friends-list/friends-list.component";
 import {ComposeComponent} from "./components/compose/compose.component";
+import {EditComponent} from "./components/edit/edit.component";
 
 const routes: Routes = [
 
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path: 'profile/:userId', component: ProfileComponent },
   {path: 'compose', component: ComposeComponent, pathMatch: 'full'},
   {path: 'timeline', component: TimelineComponent, pathMatch: 'full'},
+  {path: 'edit', component: EditComponent, pathMatch: 'full'},
   {path: '**', component: PageNotFoundComponent}
 
 ];
