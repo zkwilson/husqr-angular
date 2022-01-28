@@ -41,12 +41,13 @@ export class EditComponent implements OnInit {
   }
 
   onSubmit(): void {
+
     if (this.user?.id) {
       const user: User = {
         ...this.editForm?.value,
         id: this.user?.id,
-        likes: this.likes.value.join(", "),
-        dislikes: this.dislikes.value.join(", ")
+        likes: this.likes.value.filter(like => like?.trim().length ).join(", "),
+        dislikes: this.dislikes.value.filter(dislike => dislike?.trim().length).join(", ")
       }
     this.usersService.editUser(user);
   }

@@ -42,8 +42,8 @@
       <ng-container *ngFor="let like of likes.controls; index as i; last as isLast" [formArrayName]="'likes'">
         <div class="input-group">
           <input type="text" id="likes-{{ i }}" [formControlName]="i" class="form-array">
-          <button (click)="deleteLike(i)" [ngClass]="{'middle-btn' : isLast}" [disabled]="!i || likes?.controls?.length === 1">&times;</button>
-          <button *ngIf="isLast" (click)="addLike()" class="add-btn">&plus;</button>
+          <button (click)="deleteLike(i)" [ngClass]="{'middle-btn' : isLast}" [disabled]="!i || likes?.controls?.length === 1" >&times;</button>
+          <button *ngIf="isLast" (click)="addLike()">&plus;</button>
         </div>
       </ng-container>
     </div>
@@ -54,7 +54,7 @@
         <div class="input-group">
           <input type="text" id="dislikes-{{ i }}" [formControlName]="i" class="form-array">
           <button (click)="deleteDislike(i)" [ngClass]="{'middle-btn' : isLast}" [disabled]="!i || dislikes?.controls?.length === 1">&times;</button>
-          <button *ngIf="isLast" (click)="addDislike()" class="add-btn">&plus;</button>
+          <button *ngIf="isLast" (click)="addDislike()">&plus;</button>
         </div>
       </ng-container>
     </div>

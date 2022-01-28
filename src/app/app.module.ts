@@ -18,6 +18,7 @@ import {TimelineService} from "./services/timeline.service";
 import { ComposeComponent } from './components/compose/compose.component';
 import {UsersService} from "./services/users.service";
 import { EditComponent } from './components/edit/edit.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { EditComponent } from './components/edit/edit.component';
     FriendsListComponent,
     FriendComponent,
     ComposeComponent,
-    EditComponent
+    EditComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
