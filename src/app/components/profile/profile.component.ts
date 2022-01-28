@@ -31,4 +31,9 @@ export class ProfileComponent implements OnInit {
     })
   }
 
+  editProfile() {
+    this.router.navigate(['/edit'])
+  }
+
+
 }

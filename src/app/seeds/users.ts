@@ -6,7 +6,10 @@ export const initialUsers: User[] = [
     id: '1',
     name: 'Zane Wilson',
     age: 29,
-    location: 'Omaha, NE'
+    location: 'Omaha, NE',
+    about: 'This is my about me section',
+    likes: 'Concerts, Hiking',
+    dislikes: 'Annoying people, spiders'
   },
   {
     id: '2',

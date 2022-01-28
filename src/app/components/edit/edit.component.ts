@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, MaxLengthValidator, Validators} from "@angular/forms";
+import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {ActiveUserService} from "../../services/active-user.service";
 import {UsersService} from "../../services/users.service";
 import {User} from "../../interfaces/user";
@@ -12,45 +12,85 @@ import {Router} from "@angular/router";
 })
 export class EditComponent implements OnInit {
   editForm: FormGroup | undefined
-  activeUserId: string | undefined
+  user: User | undefined
 
   constructor(private fb: FormBuilder,
               private activeUserService: ActiveUserService,
               private usersService: UsersService,
               private router: Router) {
-    this.activeUserService._activeUser$.subscribe(userId => this.activeUserId = userId)
+    this.activeUserService._activeUser$.subscribe(userId => {
+      this.user = this.usersService.getUserById(userId)
+    })
   }
 
   ngOnInit(): void {
-    this.editForm = this.fb.group({
-      name: ['', [Validators.required, Validators.maxLength(20)]],
-      location: ['', [Validators.required, Validators.maxLength(100)]],
-      age: [null, [Validators.required, Validators.min(13), Validators.max(120)]],
-      about: [''],
-      likes: [''],
-      dislikes: ['']
+    this.editForm = new FormGroup({
+      name: new FormControl(
+        this.user?.name,
+        [Validators.required, Validators.maxLength(20)]),
+      location: new FormControl(this.user?.location, Validators.required),
+      age: new FormControl(this.user?.age, Validators.required),
+      about: new FormControl(this.user?.about, Validators.required),
+      likes: new FormArray(
+        this.user?.likes?.split(', ').map(like => new FormControl(like)) || [new FormControl('')]
+      ),
+      dislikes: new FormArray(
+        this.user?.dislikes?.split(', ').map(dislike => new FormControl(dislike)) || [new FormControl('')]
+      )
     })
   }
 
   onSubmit(): void {
-    console.log(this.editForm?.value);
-    const user: User = {...this.editForm?.value,
-      id: this.activeUserId}
-      this.usersService.editUser(user);
-      this.router.navigate(['/profile', this.activeUserId])
+    if (this.user?.id) {
+      const user: User = {
+        ...this.editForm?.value,
+        id: this.user?.id,
+        likes: this.likes.value.join(", "),
+        dislikes: this.dislikes.value.join(", ")
+      }
+    this.usersService.editUser(user);
+  }
+    this.router.navigate(['/profile', this.user?.id])
   }
 
   get name() {
-    return this.editForm?.get("name");
+    return this.editForm?.get("name")
   }
 
   get location() {
-    return this.editForm?.get("location");
+    return this.editForm?.get("location")
   }
 
   get age() {
-    return this.editForm?.get("age");
+    return this.editForm?.get("age")
   }
+
+  get likes() {
+    return this.editForm?.get("likes") as FormArray
+  }
+
+  get dislikes() {
+    return this.editForm?.get("dislikes") as FormArray
+  }
+
+  addLike() {
+    const like = new FormControl()
+    this.likes.push(like)
+  }
+
+  addDislike() {
+    const dislike = new FormControl()
+    this.dislikes.push(dislike)
+  }
+
+  deleteLike(i: number) {
+    this.likes.removeAt(i)
+  }
+
+  deleteDislike(i: number) {
+    this.dislikes.removeAt(i)
+  }
+
 
 
 }

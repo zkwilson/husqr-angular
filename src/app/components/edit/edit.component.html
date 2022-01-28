@@ -37,15 +37,28 @@
       <textarea name="bio" id="bio" cols="30" rows="10" formControlName="about"></textarea>
     </div>
 
-    <div>
-      <label for="likes">Likes:</label>
-      <input type="text" id="likes" formControlName='likes'>
+    <div class="form-section">
+      <label>Likes:</label>
+      <ng-container *ngFor="let like of likes.controls; index as i; last as isLast" [formArrayName]="'likes'">
+        <div class="input-group">
+          <input type="text" id="likes-{{ i }}" [formControlName]="i" class="form-array">
+          <button (click)="deleteLike(i)" [ngClass]="{'middle-btn' : isLast}" [disabled]="!i || likes?.controls?.length === 1">&times;</button>
+          <button *ngIf="isLast" (click)="addLike()" class="add-btn">&plus;</button>
+        </div>
+      </ng-container>
     </div>
 
-    <div>
-      <label for="dislikes">Dislikes:</label>
-      <input type="text" id="dislikes" formControlName="dislikes">
+    <div class="form-section">
+      <label>Dislikes:</label>
+      <ng-container *ngFor="let dislike of dislikes.controls; index as i; last as isLast" [formArrayName]="'dislikes'">
+        <div class="input-group">
+          <input type="text" id="dislikes-{{ i }}" [formControlName]="i" class="form-array">
+          <button (click)="deleteDislike(i)" [ngClass]="{'middle-btn' : isLast}" [disabled]="!i || dislikes?.controls?.length === 1">&times;</button>
+          <button *ngIf="isLast" (click)="addDislike()" class="add-btn">&plus;</button>
+        </div>
+      </ng-container>
     </div>
+
 
     <div>
       <button type="submit" [disabled]="editForm.invalid" >Submit</button>

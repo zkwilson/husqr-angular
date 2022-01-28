@@ -36,6 +36,7 @@ span {
   max-width: 300px;
   text-align: center;
   float: left;
+  margin-right: 4em;
 }
 
 .title {
@@ -69,4 +70,14 @@ button:hover, a:hover {
 .edit-button {
   float: right;
 }
+
+.about-header {
+  font-style: italic;
+  text-align: center;
+}
+
+.about-me p {
+  margin-bottom: 6em;
+}
+
 

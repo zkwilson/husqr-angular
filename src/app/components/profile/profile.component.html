@@ -31,6 +31,22 @@
   <p><button class="card-button">Contact</button></p>
 </div>
     </div>
-      <button *ngIf="authenticated" [routerLink]="['/edit']" class="bg-dark text-light edit-button">Edit Profile</button>
-
+    <div>
+      <button *ngIf="authenticated" (click)="editProfile()" class="bg-dark text-light edit-button">Edit Profile</button>
+    </div>
+    <div>
+    <h2 class="about-header">About Me</h2>
+    </div>
+    <div class="aboout-me">
+    <div>
+      <p *ngIf="profile"><span>About me: </span>{{profile.about}}</p>
+    </div>
+    <div>
+      <p *ngIf="profile"><span>Likes: </span>{{profile.likes}}</p>
+    </div>
+    <div>
+      <p *ngIf="profile"><span>Dislikes: </span>{{profile.dislikes}}</p>
+    </div>
+  </div>
+  </div>
 
