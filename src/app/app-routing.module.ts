@@ -6,9 +6,11 @@ import {TimelineComponent} from "./components/timeline/timeline.component";
 import {FriendsListComponent} from "./components/friends-list/friends-list.component";
 import {ComposeComponent} from "./components/compose/compose.component";
 import {EditComponent} from "./components/edit/edit.component";
+import {LoginComponent} from "./components/login/login.component";
 
 const routes: Routes = [
 
+  {path: 'login', component: LoginComponent, pathMatch: 'full'},
   {path: '', component: TimelineComponent, pathMatch: 'full'},
   {path: 'friends', component: FriendsListComponent, pathMatch: 'full'},
   {path: 'profile/:userId', component: ProfileComponent },
