@@ -27,8 +27,8 @@ export class LoginComponent implements OnInit {
   login() {
     const username = this.loginForm?.get("username")?.value;
     const password = this.loginForm?.get("password")?.value;
+    const userId = this.userService.authenticateUser(username, password);
 
-    let userId = this.userService.authenticateUser(username, password);
     if(userId) {
       this.activeUserService.setActiveUser(userId);
       this.router.navigate(['/timeline']);

@@ -19,7 +19,10 @@ export const initialUsers: User[] = [
     username: 'zhaq',
     password: 'zaeem123',
     age: 21,
-    location: 'Omaha, NE'
+    location: 'Omaha, NE',
+    about: 'This is my about me section',
+    likes: 'Concerts, Hiking',
+    dislikes: 'Annoying people, spiders'
   },
   {
     id: '3',
@@ -27,7 +30,10 @@ export const initialUsers: User[] = [
     username: 'aherink',
     password: 'allie123',
     age: 25,
-    location: 'Bellevue, NE'
+    location: 'Bellevue, NE',
+    about: 'This is my about me section',
+    likes: 'Concerts, Hiking',
+    dislikes: 'Annoying people, spiders'
   }
 
 ]

@@ -8,15 +8,16 @@ import {ComposeComponent} from "./components/compose/compose.component";
 import {EditComponent} from "./components/edit/edit.component";
 import {LoginComponent} from "./components/login/login.component";
 import {UserGuardGuard} from "./guards/user-guard.guard";
+import {RegisterComponent} from "./components/register/register.component";
 
 const routes: Routes = [
 
   {path: '', component: LoginComponent, pathMatch: 'full'},
-  {path: 'timeline', component: TimelineComponent, pathMatch: 'full'},
+  {path: 'register', component: RegisterComponent, pathMatch: 'full'},
+  {path: 'timeline', component: TimelineComponent, pathMatch: 'full', canActivate: [UserGuardGuard]},
   {path: 'friends', component: FriendsListComponent, pathMatch: 'full', canActivate: [UserGuardGuard]},
-  {path: 'profile/:userId', component: ProfileComponent },
+  {path: 'profile/:userId', component: ProfileComponent, canActivate: [UserGuardGuard] },
   {path: 'compose', component: ComposeComponent, pathMatch: 'full', canActivate: [UserGuardGuard]},
-  {path: 'timeline', component: TimelineComponent, pathMatch: 'full'},
   {path: 'edit', component: EditComponent, pathMatch: 'full', canActivate: [UserGuardGuard]},
   {path: '**', component: PageNotFoundComponent}
 

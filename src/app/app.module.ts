@@ -20,6 +20,7 @@ import {UsersService} from "./services/users.service";
 import { EditComponent } from './components/edit/edit.component';
 import { LoginComponent } from './components/login/login.component';
 import {UserGuardGuard} from "./guards/user-guard.guard";
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import {UserGuardGuard} from "./guards/user-guard.guard";
     FriendComponent,
     ComposeComponent,
     EditComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

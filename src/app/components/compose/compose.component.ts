@@ -11,7 +11,8 @@ import {Router} from "@angular/router";
 export class ComposeComponent implements OnInit {
   message: string = ''
 
-  constructor(private timelineService: TimelineService, private router: Router) { }
+  constructor(private timelineService: TimelineService,
+              private router: Router) { }
 
   ngOnInit(): void {
   }

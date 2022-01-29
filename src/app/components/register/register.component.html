@@ -1,0 +1,39 @@
+<div class="border border-secondary text-dark login">
+  <div class="header">
+    <h2 class="text-danger">Register with Husqr</h2>
+  </div>
+  <div class="form">
+    <form *ngIf="registerForm" [formGroup]="registerForm" (ngSubmit)="register()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter First and last Name" formControlName="name">
+        <div *ngIf="registerForm.invalid && (registerForm.get('name')?.dirty || registerForm.get('name')?.touched)">
+          <span *ngIf="registerForm.get('name')?.errors?.['required']">Name is required</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" placeholder="Enter username" formControlName="username">
+        <div *ngIf="registerForm.invalid && (registerForm.get('username')?.dirty || registerForm.get('username')?.touched)">
+          <span *ngIf="registerForm.get('username')?.errors?.['required']">Username is required</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password">
+        <div *ngIf="registerForm.invalid && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched)">
+          <span *ngIf="registerForm.get('password')?.errors?.['required']">Password is required</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="age">Age</label>
+        <input type="number" class="form-control" id="age" placeholder="Enter age" formControlName="age">
+        <div *ngIf="registerForm.invalid && (registerForm.get('age')?.dirty || registerForm.get('age')?.touched)">
+          <span *ngIf="registerForm.get('age')?.errors?.['required']">Age is required</span>
+          <span *ngIf="registerForm.get('age')?.errors?.['min']">Must be at least 13 years of age</span>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">Submit</button>
+    </form>
+  </div>
+</div>
