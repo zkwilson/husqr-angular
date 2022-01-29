@@ -19,6 +19,7 @@ import { ComposeComponent } from './components/compose/compose.component';
 import {UsersService} from "./services/users.service";
 import { EditComponent } from './components/edit/edit.component';
 import { LoginComponent } from './components/login/login.component';
+import {UserGuardGuard} from "./guards/user-guard.guard";
 
 @NgModule({
   declarations: [
@@ -43,10 +44,7 @@ import { LoginComponent } from './components/login/login.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [
-    TimelineService,
-    UsersService
-  ],
+  providers: [UserGuardGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
