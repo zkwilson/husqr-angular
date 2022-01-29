@@ -16,14 +16,14 @@
   <h2 class="text-danger">Login to start Husqing!</h2>
 </div>
 <div class="form">
-<form>
+  <form *ngIf="loginForm" [formGroup]="loginForm" (ngSubmit)="login()">
   <div class="form-group">
     <label for="username">Username</label>
-    <input type="text" class="form-control" id="username" placeholder="Enter username">
+    <input type="text" class="form-control" id="username" placeholder="Enter username" formControlName="username">
   </div>
   <div class="form-group">
     <label for="password">Password</label>
-    <input type="password" class="form-control" id="password" placeholder="Password">
+    <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password">
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

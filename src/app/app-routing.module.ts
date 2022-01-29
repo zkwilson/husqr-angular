@@ -7,16 +7,17 @@ import {FriendsListComponent} from "./components/friends-list/friends-list.compo
 import {ComposeComponent} from "./components/compose/compose.component";
 import {EditComponent} from "./components/edit/edit.component";
 import {LoginComponent} from "./components/login/login.component";
+import {UserGuardGuard} from "./guards/user-guard.guard";
 
 const routes: Routes = [
 
-  {path: 'login', component: LoginComponent, pathMatch: 'full'},
-  {path: '', component: TimelineComponent, pathMatch: 'full'},
-  {path: 'friends', component: FriendsListComponent, pathMatch: 'full'},
-  {path: 'profile/:userId', component: ProfileComponent },
-  {path: 'compose', component: ComposeComponent, pathMatch: 'full'},
+  {path: '', component: LoginComponent, pathMatch: 'full'},
   {path: 'timeline', component: TimelineComponent, pathMatch: 'full'},
-  {path: 'edit', component: EditComponent, pathMatch: 'full'},
+  {path: 'friends', component: FriendsListComponent, pathMatch: 'full', canActivate: [UserGuardGuard]},
+  {path: 'profile/:userId', component: ProfileComponent },
+  {path: 'compose', component: ComposeComponent, pathMatch: 'full', canActivate: [UserGuardGuard]},
+  {path: 'timeline', component: TimelineComponent, pathMatch: 'full'},
+  {path: 'edit', component: EditComponent, pathMatch: 'full', canActivate: [UserGuardGuard]},
   {path: '**', component: PageNotFoundComponent}
 
 ];

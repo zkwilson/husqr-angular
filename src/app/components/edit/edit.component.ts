@@ -19,7 +19,9 @@ export class EditComponent implements OnInit {
               private usersService: UsersService,
               private router: Router) {
     this.activeUserService._activeUser$.subscribe(userId => {
-      this.user = this.usersService.getUserById(userId)
+      if(userId){
+        this.user = this.usersService.getUserById(userId)
+      }
     })
   }
 

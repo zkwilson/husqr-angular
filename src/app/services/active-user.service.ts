@@ -1,12 +1,25 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject} from "rxjs";
+import {User} from "../interfaces/user";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ActiveUserService {
-  private readonly _activeUserSource = new BehaviorSubject<string>('1');
+  private readonly _activeUserSource = new BehaviorSubject<string | undefined>(undefined );
   readonly _activeUser$ = this._activeUserSource.asObservable();
 
   constructor() { }
+
+  private _setActiveUser(id: string): void {
+    this._activeUserSource.next(id);
+  }
+
+  setActiveUser(id: string): void {
+    this._setActiveUser(id);
+  }
+
+  getActiveUser() :string | undefined {
+    return this._activeUserSource.getValue();
+  }
 }

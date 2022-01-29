@@ -11,6 +11,7 @@ export class UsersService {
 
   private readonly _usersSource = new BehaviorSubject<User[]>(initialUsers);
   readonly users$ = this._usersSource.asObservable();
+  private loggedIn:boolean = false;
 
   constructor() { }
 
@@ -41,4 +42,18 @@ export class UsersService {
     this._setUsers(users)
   }
 
+  authenticateUser (username: string, password:string): string | undefined{
+    let user = this.getUsers().find(user => user.username === username && user.password === password);
+    if(user) {
+      return user.id
+    }
+    else {
+      return undefined
+    }
+
+  }
+
+  getLoggedIn() {
+    return this.loggedIn;
+  }
 }
