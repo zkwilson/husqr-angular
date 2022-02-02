@@ -46,8 +46,8 @@ export class EditComponent implements OnInit {
 
     if (this.user?.id) {
       const user: User = {
+        ...this.user,
         ...this.editForm?.value,
-        id: this.user?.id,
         likes: this.likes.value.filter(like => like?.trim().length ).join(", "),
         dislikes: this.dislikes.value.filter(dislike => dislike?.trim().length).join(", ")
       }

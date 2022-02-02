@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from "rxjs";
 import { User } from "../interfaces/user";
 import { initialUsers } from "../seeds/users";
+import {LocalStorageService} from "./local-storage.service";
 
 
 @Injectable({
@@ -9,14 +10,22 @@ import { initialUsers } from "../seeds/users";
 })
 export class UsersService {
 
-  private readonly _usersSource = new BehaviorSubject<User[]>(initialUsers);
+  private readonly _usersSource = new BehaviorSubject<User[]>([]);
   readonly users$ = this._usersSource.asObservable();
-  private loggedIn:boolean = false;
+  //private loggedIn:boolean = false;
 
-  constructor() { }
+  constructor(private localStorage: LocalStorageService) {
+    const users: User[] = this.localStorage.getItem('users');
+    if (users?.length) {
+      this._setUsers(users);
+    } else {
+      this._setUsers(initialUsers);
+    }
+  }
 
   private _setUsers(users: User[]): void {
     this._usersSource.next(users);
+    this.localStorage.setItem('users', users);
   }
 
   getUsers(): User[] {
@@ -53,7 +62,7 @@ export class UsersService {
 
   }
 
-  getLoggedIn() {
-    return this.loggedIn;
-  }
+  // getLoggedIn() {
+  //   return this.loggedIn;
+  // }
 }
