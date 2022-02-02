@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Husq} from "../../interfaces/husq";
 import {TimelineService} from "../../services/timeline.service";
+import {User} from "../../interfaces/user";
 
 @Component({
   selector: 'app-husq',
@@ -8,7 +9,7 @@ import {TimelineService} from "../../services/timeline.service";
   styleUrls: ['./husq.component.scss']
 })
 export class HusqComponent implements OnInit {
-  @Input() husqObj: Husq | undefined
+  @Input() husqObj: Husq & User | undefined
 
   time: Date = new Date()
 
@@ -18,9 +19,6 @@ export class HusqComponent implements OnInit {
   constructor(private timelineService: TimelineService) { }
 
   ngOnInit(): void {
-
-    //console.log(this.timelineService.getHusqsByUserId('1'))
-    console.log(this.timelineService.getHusqById('2'))
   }
 
   saveReply(): void {

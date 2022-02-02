@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { Husq } from "../interfaces/husq";
 import { initialHusqs } from "../seeds/husq";
 import { BehaviorSubject } from "rxjs";
+import {LocalStorageService} from "./local-storage.service";
+import {User} from "../interfaces/user";
+import {initialUsers} from "../seeds/users";
 
 @Injectable({
   providedIn: 'root'
@@ -10,11 +13,19 @@ export class TimelineService {
   private readonly _husqSource = new BehaviorSubject<Husq[]>(initialHusqs)
   readonly husqs$ = this._husqSource.asObservable();
 
-  constructor() { }
+  constructor(private localStorage: LocalStorageService) {
+    const husqs: Husq[] = this.localStorage.getItem('husqs');
+    if (husqs?.length) {
+      this._setHusqs(husqs);
+    } else {
+      this._setHusqs(initialHusqs);
+    }
+  }
 
 
   private _setHusqs(husqs: Husq[]) {
     this._husqSource.next(husqs)
+    this.localStorage.setItem('husqs', husqs)
   }
 
   getHusq() {

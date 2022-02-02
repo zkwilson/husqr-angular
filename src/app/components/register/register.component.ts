@@ -4,6 +4,7 @@ import {ActiveUserService} from "../../services/active-user.service";
 import {UsersService} from "../../services/users.service";
 import {Router} from "@angular/router";
 import {User} from "../../interfaces/user";
+import {v4 as uuidv4} from "uuid";
 
 @Component({
   selector: 'app-register',
@@ -28,9 +29,10 @@ export class RegisterComponent implements OnInit {
 
   register() {
 
+    const id = uuidv4()
     const user: User = {
-      id: '5',
       name: this.registerForm?.get("name")?.value,
+      id,
       username: this.registerForm?.get("username")?.value,
       password: this.registerForm?.get("password")?.value,
       age: this.registerForm?.get("age")?.value
