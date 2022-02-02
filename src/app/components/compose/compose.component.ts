@@ -12,7 +12,7 @@ import {User} from "../../interfaces/user";
   styleUrls: ['./compose.component.scss']
 })
 export class ComposeComponent implements OnInit {
-  @Input() user : User | undefined
+  user : User | undefined
   message: string = ''
   activeUserId: string | undefined
 

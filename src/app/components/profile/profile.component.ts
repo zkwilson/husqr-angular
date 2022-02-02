@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {User} from "../../interfaces/user";
 import {UsersService} from "../../services/users.service";
 import {ActiveUserService} from "../../services/active-user.service";
+import {FriendsService} from "../../services/friends.service";
 
 @Component({
   selector: 'app-profile',
@@ -16,7 +17,8 @@ export class ProfileComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute,
               private userService: UsersService,
               private router: Router,
-              private activeUserService: ActiveUserService) {
+              private activeUserService: ActiveUserService,
+              private friendService: FriendsService) {
     this.activatedRoute.paramMap.subscribe((params) => {
       const id = params.get('userId')
       if (id) {
@@ -35,5 +37,12 @@ export class ProfileComponent implements OnInit {
     this.router.navigate(['/edit'])
   }
 
+  unfriend() {
+    const id = this.profile?.id;
+    if(id) {
+      this.friendService.removeFriend(id);
+      this.router.navigate(['friends']);
+    }
+  }
 
 }

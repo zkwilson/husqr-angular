@@ -1,12 +1,13 @@
 import {User} from "../interfaces/user";
 
 
+
 export const initialUsers: User[] = [
   {
     id: '1',
-    name: 'Zane Wilson',
-    username: 'zwilson',
-    password: 'zane123',
+    name: 'Johnny Carmello',
+    username: 'johnny',
+    password: 'johnny123',
     age: 29,
     location: 'Omaha, NE',
     about: 'This is my about me section',

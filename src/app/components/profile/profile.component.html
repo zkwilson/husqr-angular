@@ -33,6 +33,7 @@
     </div>
     <div>
       <button *ngIf="authenticated" (click)="editProfile()" class="bg-dark text-light edit-button">Edit Profile</button>
+      <button *ngIf="!authenticated" (click)="unfriend()" class="text-dark unfriend-btn">Unfriend</button>
     </div>
     <div>
     <h2 class="about-header">About Me</h2>

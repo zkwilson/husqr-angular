@@ -3,7 +3,7 @@
     <img src="https://avatars.dicebear.com/api/initials/{{husqObj.name}}.svg">
     <p class="husq-name">{{husqObj.name}}</p>
     <p class="husq-time">{{husqObj.time.toLocaleString()}}</p>
-    <button *ngIf="activeUser === husqObj.id" (click)="removeHusq()" class="input-group-text bg-dark text-danger" id="delete-btn">&times;</button>
+    <button *ngIf="activeUser === husqObj.userId" (click)="removeHusq()" class="input-group-text bg-dark text-danger" id="delete-btn">&times;</button>
   </div>
   <div class="husq-body">
     <p>{{husqObj.message}}</p>

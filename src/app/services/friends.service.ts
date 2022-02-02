@@ -28,4 +28,28 @@ export class FriendsService {
     this._friendsSource.next(users);
     this.localStorage.setItem('friends', users);
   }
+
+  // getUsers(): User[] {
+  //   return this._usersSource.getValue();
+  // }
+  //
+  // addUser(user: User): void {
+  //   const users = [...this.getUsers(), user];
+  //   this._setUsers(users)
+  // }
+  //
+  // removeUser(id: string): void {
+  //   const users = [...this.getUsers().filter(user => user.id !== id)]
+  //   this._setUsers(users)
+  // }
+
+  getFriends(): User[] {
+    return this._friendsSource.getValue();
+  }
+
+  removeFriend(id: string): void {
+    console.log(id);
+    const friends = [...this.getFriends().filter(friend => friend.id !== id)];
+    this._setFriends(friends);
+  }
 }
