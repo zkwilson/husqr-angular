@@ -17,7 +17,7 @@ export class ActiveUserService {
     }
   }
 
-  private _setActiveUser(id: string): void {
+  private _setActiveUser(id: string | undefined): void {
     this._activeUserSource.next(id);
     this.localStorage.setItem('activeUser', id);
   }
@@ -28,5 +28,9 @@ export class ActiveUserService {
 
   getActiveUser(): string | undefined {
     return this._activeUserSource.getValue();
+  }
+
+  logoutUser(): void {
+    this._setActiveUser(undefined);
   }
 }

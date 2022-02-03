@@ -19,5 +19,10 @@
         <a class="nav-link" [routerLink]="['/profile', activeUserId]" routerLinkActive="active">Profile</a>
       </li>
     </ul>
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+        <a class="nav-link logout" *ngIf="activeUserId !== undefined" (click)="logout()" routerLinkActive="active">Logout</a>
+      </li>
+    </ul>
   </div>
 </nav>

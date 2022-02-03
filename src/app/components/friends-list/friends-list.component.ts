@@ -18,7 +18,6 @@ export class FriendsListComponent implements OnInit {
 
   constructor(private userService: UsersService,
               private friendsService: FriendsService) {
-    //this.friends$ = this.userService.users$.subscribe(friends => this.friends = friends)
     this.friends$ = this.friendsService.friends$.subscribe(friends => this.friends = friends);
   }
 
