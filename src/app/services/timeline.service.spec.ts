@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { TimelineService } from './timeline.service';
+import {TimelineService} from './timeline.service';
 
 describe('TimelineService', () => {
   let service: TimelineService;

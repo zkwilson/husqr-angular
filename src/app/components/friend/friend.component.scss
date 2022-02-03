@@ -4,14 +4,17 @@
   max-width: 30%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .8);
 }
+
 .header {
   display: flex;
 }
+
 p {
   margin-bottom: .5em;
   margin-left: .5em;
 }
-img{
+
+img {
   max-height: 90px;
   max-width: 85px;
 }
@@ -30,6 +33,7 @@ a {
   margin-left: .5em;
   cursor: pointer;
 }
+
 .column {
   display: flex;
   flex-direction: column;

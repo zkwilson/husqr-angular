@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { ActiveUserService } from './active-user.service';
+import {ActiveUserService} from './active-user.service';
 
 describe('ActiveUserService', () => {
   let service: ActiveUserService;

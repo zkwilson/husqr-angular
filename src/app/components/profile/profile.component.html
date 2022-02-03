@@ -16,29 +16,31 @@
 <!-- Add icon library -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <div class="profile-container">
-    <h1 *ngIf="profile" class="header">{{ profile.name}}'s Profile</h1>
-    <h1 *ngIf="!profile">No User Found</h1>
-    <div>
-<div *ngIf="profile" class="card">
-  <img src="https://avatars.dicebear.com/api/gridy/{{ profile.name }}.svg">
-  <h1>{{profile.name}}</h1>
-  <p class="title">{{profile.location}}</p>
-  <p><span>Age: </span>{{profile.age}}</p>
-  <a href="http://instagram.com"><i class="fa fa-instagram"></i></a>
-  <a href="http://linkedin.com"><i class="fa fa-linkedin"></i></a>
-  <a href="http://facebook.com"><i class="fa fa-facebook"></i></a>
-  <p><button class="card-button">Contact</button></p>
-</div>
+<div class="profile-container">
+  <h1 *ngIf="profile" class="header">{{ profile.name}}'s Profile</h1>
+  <h1 *ngIf="!profile">No User Found</h1>
+  <div>
+    <div *ngIf="profile" class="card">
+      <img src="https://avatars.dicebear.com/api/gridy/{{ profile.name }}.svg">
+      <h1>{{profile.name}}</h1>
+      <p class="title">{{profile.location}}</p>
+      <p><span>Age: </span>{{profile.age}}</p>
+      <a href="http://instagram.com"><i class="fa fa-instagram"></i></a>
+      <a href="http://linkedin.com"><i class="fa fa-linkedin"></i></a>
+      <a href="http://facebook.com"><i class="fa fa-facebook"></i></a>
+      <p>
+        <button class="card-button">Contact</button>
+      </p>
     </div>
-    <div>
-      <button *ngIf="authenticated" (click)="editProfile()" class="bg-dark text-light edit-button">Edit Profile</button>
-      <button *ngIf="!authenticated" (click)="unfriend()" class="text-dark unfriend-btn">Unfriend</button>
-    </div>
-    <div>
+  </div>
+  <div>
+    <button *ngIf="authenticated" (click)="editProfile()" class="bg-dark text-light edit-button">Edit Profile</button>
+    <button *ngIf="!authenticated" (click)="unfriend()" class="text-dark unfriend-btn">Unfriend</button>
+  </div>
+  <div>
     <h2 class="about-header">About Me</h2>
-    </div>
-    <div class="aboout-me">
+  </div>
+  <div class="aboout-me">
     <div>
       <p *ngIf="profile"><span>About me: </span>{{profile.about}}</p>
     </div>
@@ -49,5 +51,5 @@
       <p *ngIf="profile"><span>Dislikes: </span>{{profile.dislikes}}</p>
     </div>
   </div>
-  </div>
+</div>
 

@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
-import { Husq } from "../interfaces/husq";
-import { initialHusqs } from "../seeds/husq";
-import { BehaviorSubject } from "rxjs";
+import {Injectable} from '@angular/core';
+import {Husq} from "../interfaces/husq";
+import {initialHusqs} from "../seeds/husq";
+import {BehaviorSubject} from "rxjs";
 import {LocalStorageService} from "./local-storage.service";
 import {User} from "../interfaces/user";
 import {initialUsers} from "../seeds/users";

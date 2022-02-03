@@ -1,26 +1,26 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { ContentComponent } from './components/content/content.component';
-import { HusqComponent } from './components/husq/husq.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ProfileComponent } from './components/profile/profile.component';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { TimelineComponent } from './components/timeline/timeline.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {HeaderComponent} from './components/header/header.component';
+import {ContentComponent} from './components/content/content.component';
+import {HusqComponent} from './components/husq/husq.component';
+import {FooterComponent} from './components/footer/footer.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {ProfileComponent} from './components/profile/profile.component';
+import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
+import {TimelineComponent} from './components/timeline/timeline.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { FriendsListComponent } from './components/friends-list/friends-list.component';
-import { FriendComponent } from './components/friend/friend.component';
+import {FriendsListComponent} from './components/friends-list/friends-list.component';
+import {FriendComponent} from './components/friend/friend.component';
 import {TimelineService} from "./services/timeline.service";
-import { ComposeComponent } from './components/compose/compose.component';
+import {ComposeComponent} from './components/compose/compose.component';
 import {UsersService} from "./services/users.service";
-import { EditComponent } from './components/edit/edit.component';
-import { LoginComponent } from './components/login/login.component';
+import {EditComponent} from './components/edit/edit.component';
+import {LoginComponent} from './components/login/login.component';
 import {UserGuardGuard} from "./guards/user-guard.guard";
-import { RegisterComponent } from './components/register/register.component';
+import {RegisterComponent} from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -49,4 +49,5 @@ import { RegisterComponent } from './components/register/register.component';
   providers: [UserGuardGuard],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

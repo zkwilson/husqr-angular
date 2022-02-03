@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {BehaviorSubject} from "rxjs";
 import {User} from "../interfaces/user";
 import {LocalStorageService} from "./local-storage.service";
@@ -7,7 +7,7 @@ import {LocalStorageService} from "./local-storage.service";
   providedIn: 'root'
 })
 export class ActiveUserService {
-  private readonly _activeUserSource = new BehaviorSubject<string | undefined>(undefined );
+  private readonly _activeUserSource = new BehaviorSubject<string | undefined>(undefined);
   readonly _activeUser$ = this._activeUserSource.asObservable();
 
   constructor(private localStorage: LocalStorageService) {
@@ -26,7 +26,7 @@ export class ActiveUserService {
     this._setActiveUser(id);
   }
 
-  getActiveUser() :string | undefined {
+  getActiveUser(): string | undefined {
     return this._activeUserSource.getValue();
   }
 }

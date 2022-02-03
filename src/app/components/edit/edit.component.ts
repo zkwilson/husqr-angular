@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {ActiveUserService} from "../../services/active-user.service";
 import {UsersService} from "../../services/users.service";
@@ -19,7 +19,7 @@ export class EditComponent implements OnInit {
               private usersService: UsersService,
               private router: Router) {
     this.activeUserService._activeUser$.subscribe(userId => {
-      if(userId){
+      if (userId) {
         this.user = this.usersService.getUserById(userId)
       }
     })
@@ -48,11 +48,11 @@ export class EditComponent implements OnInit {
       const user: User = {
         ...this.user,
         ...this.editForm?.value,
-        likes: this.likes.value.filter(like => like?.trim().length ).join(", "),
+        likes: this.likes.value.filter(like => like?.trim().length).join(", "),
         dislikes: this.dislikes.value.filter(dislike => dislike?.trim().length).join(", ")
       }
-    this.usersService.editUser(user);
-  }
+      this.usersService.editUser(user);
+    }
     this.router.navigate(['/profile', this.user?.id])
   }
 
@@ -93,7 +93,6 @@ export class EditComponent implements OnInit {
   deleteDislike(i: number) {
     this.dislikes.removeAt(i)
   }
-
 
 
 }

@@ -1,7 +1,6 @@
 import {User} from "../interfaces/user";
 
 
-
 export const initialUsers: User[] = [
   {
     id: '1',

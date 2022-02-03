@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject } from "rxjs";
-import { User } from "../interfaces/user";
-import { initialUsers } from "../seeds/users";
+import {Injectable} from '@angular/core';
+import {BehaviorSubject} from "rxjs";
+import {User} from "../interfaces/user";
+import {initialUsers} from "../seeds/users";
 import {LocalStorageService} from "./local-storage.service";
 
 
@@ -12,6 +12,7 @@ export class UsersService {
 
   private readonly _usersSource = new BehaviorSubject<User[]>([]);
   readonly users$ = this._usersSource.asObservable();
+
   //private loggedIn:boolean = false;
 
   constructor(private localStorage: LocalStorageService) {
@@ -51,12 +52,11 @@ export class UsersService {
     this._setUsers(users)
   }
 
-  authenticateUser (username: string, password:string): string | undefined{
+  authenticateUser(username: string, password: string): string | undefined {
     let user = this.getUsers().find(user => user.username === username && user.password === password);
-    if(user) {
+    if (user) {
       return user.id
-    }
-    else {
+    } else {
       return undefined
     }
 

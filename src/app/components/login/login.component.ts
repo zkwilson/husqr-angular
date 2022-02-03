@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {ActiveUserService} from "../../services/active-user.service";
@@ -15,10 +15,11 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router,
               private userService: UsersService,
               private activeUserService: ActiveUserService
-              ) { }
+  ) {
+  }
 
   ngOnInit(): void {
-    this.loginForm = new FormGroup( {
+    this.loginForm = new FormGroup({
       username: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required)
     })
@@ -29,7 +30,7 @@ export class LoginComponent implements OnInit {
     const password = this.loginForm?.get("password")?.value;
     const userId = this.userService.authenticateUser(username, password);
 
-    if(userId) {
+    if (userId) {
       this.activeUserService.setActiveUser(userId);
       this.router.navigate(['/timeline']);
     }

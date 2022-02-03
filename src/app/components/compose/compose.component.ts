@@ -12,7 +12,7 @@ import {User} from "../../interfaces/user";
   styleUrls: ['./compose.component.scss']
 })
 export class ComposeComponent implements OnInit {
-  user : User | undefined
+  user: User | undefined
   message: string = ''
   activeUserId: string | undefined
 
@@ -22,7 +22,7 @@ export class ComposeComponent implements OnInit {
               private userService: UsersService) {
     this.activeUserId = this.activeUserService.getActiveUser();
     const id = this.activeUserService.getActiveUser();
-    if(id) {
+    if (id) {
       this.user = this.userService.getUserById(id);
     }
 

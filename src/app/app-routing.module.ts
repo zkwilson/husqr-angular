@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {ProfileComponent} from "./components/profile/profile.component";
 import {PageNotFoundComponent} from "./components/page-not-found/page-not-found.component";
 import {TimelineComponent} from "./components/timeline/timeline.component";
@@ -16,7 +16,7 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent, pathMatch: 'full'},
   {path: 'timeline', component: TimelineComponent, pathMatch: 'full', canActivate: [UserGuardGuard]},
   {path: 'friends', component: FriendsListComponent, pathMatch: 'full', canActivate: [UserGuardGuard]},
-  {path: 'profile/:userId', component: ProfileComponent, canActivate: [UserGuardGuard] },
+  {path: 'profile/:userId', component: ProfileComponent, canActivate: [UserGuardGuard]},
   {path: 'compose', component: ComposeComponent, pathMatch: 'full', canActivate: [UserGuardGuard]},
   {path: 'edit', component: EditComponent, pathMatch: 'full', canActivate: [UserGuardGuard]},
   {path: '**', component: PageNotFoundComponent}
@@ -27,4 +27,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

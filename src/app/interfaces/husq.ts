@@ -3,5 +3,5 @@ export interface Husq {
   userId: string
   time: Date
   message: string
-  repliesto? : string
+  repliesto?: string
 }

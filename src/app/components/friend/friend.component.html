@@ -1,9 +1,9 @@
 <div *ngIf="friendObj" class="col-6 border border-secondary bg-light text-dark" id="friend">
   <div class="header">
     <img src="https://avatars.dicebear.com/api/initials/{{ friendObj.name }}.svg">
-  <div class="friend-body">
-    <a (click)="navigateToUser()">{{ friendObj.name }}</a>
-    <p>{{ friendObj.location }}</p>
-  </div>
+    <div class="friend-body">
+      <a (click)="navigateToUser()">{{ friendObj.name }}</a>
+      <p>{{ friendObj.location }}</p>
+    </div>
   </div>
 </div>

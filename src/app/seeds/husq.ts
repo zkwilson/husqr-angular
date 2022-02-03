@@ -1,5 +1,5 @@
-import { Husq } from "../interfaces/husq";
-import { v4 as uuidv4 } from "uuid";
+import {Husq} from "../interfaces/husq";
+import {v4 as uuidv4} from "uuid";
 
 export const initialHusqs: Husq[] = [
   {
