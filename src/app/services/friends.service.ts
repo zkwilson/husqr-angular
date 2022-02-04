@@ -38,11 +38,17 @@ export class FriendsService {
     return this._friendsSource.getValue();
   }
 
-  // removeFriend(id: string): void {
-  //   console.log(id);
-  //   const friends = [...this.getFriends().filter(friend => friend.id !== id)];
-  //   this._setFriends(friends);
-  // }
+  removeFriend(id: string): void {
+    this._setFriends(this.getFriends().reduce<Friend[]>((acc, cur) => {
+      const activeUserId = this.activeUser.getActiveUser();
+      if (activeUserId){
+        if (!(cur.pair.includes(id) && cur.pair.includes(activeUserId))){
+          acc.push(cur);
+        }
+      }
+      return acc
+    }, []))
+  }
 
   getFriendsByActiveUserId(userId: string | undefined): string[] {
     return userId ?
