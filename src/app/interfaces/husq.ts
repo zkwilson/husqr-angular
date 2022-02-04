@@ -5,3 +5,8 @@ export interface Husq {
   message: string
   repliesto?: string
 }
+
+export interface HusqWithName extends Husq {
+  name?: string;
+}
+

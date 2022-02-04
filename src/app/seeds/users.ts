@@ -4,9 +4,9 @@ import {User} from "../interfaces/user";
 export const initialUsers: User[] = [
   {
     id: '1',
-    name: 'Johnny Carmello',
-    username: 'johnny',
-    password: 'johnny123',
+    name: 'Jon Williams',
+    username: 'Jon',
+    password: 'jon123',
     age: 29,
     location: 'Omaha, NE',
     about: 'This is my about me section',

@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Husq} from "../../interfaces/husq";
+import {Husq, HusqWithName} from "../../interfaces/husq";
 import {TimelineService} from "../../services/timeline.service";
 import {User} from "../../interfaces/user";
 import {ActiveUserService} from "../../services/active-user.service";
@@ -10,21 +10,18 @@ import {ActiveUserService} from "../../services/active-user.service";
   styleUrls: ['./husq.component.scss']
 })
 export class HusqComponent implements OnInit {
-  @Input() husqObj: Husq & User | undefined
-  @Input() activeUser: String | undefined
+  @Input() husqObj: HusqWithName | undefined;
 
-  time: Date = new Date()
+  activeUserId: string | undefined;
+  time: Date = new Date();
+  tempReply: string | undefined;
+  reply: string | undefined;
 
-  tempReply: string | undefined
-  reply: string | undefined
-
-  constructor(private timelineService: TimelineService,
-              private activeUserService: ActiveUserService) {
-    this.activeUserService._activeUser$.subscribe(userId => this.activeUser = userId);
+  constructor(private timelineService: TimelineService, private activeUserService: ActiveUserService) {
+    this.activeUserId = this.activeUserService.getActiveUser();
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   saveReply(): void {
     this.reply = this.tempReply;
@@ -33,7 +30,7 @@ export class HusqComponent implements OnInit {
 
   removeHusq(): void {
     if (this.husqObj) {
-      this.timelineService.removeHusq(this.husqObj.id)
+      this.timelineService.removeHusq(this.husqObj.id);
     }
   }
 

@@ -37,12 +37,12 @@ export class ProfileComponent implements OnInit {
     this.router.navigate(['/edit'])
   }
 
-  unfriend() {
-    const id = this.profile?.id;
-    if (id) {
-      this.friendService.removeFriend(id);
-      this.router.navigate(['friends']);
-    }
-  }
+  // unfriend() {
+  //   const id = this.profile?.id;
+  //   if (id) {
+  //     this.friendService.removeFriend(id);
+  //     this.router.navigate(['friends']);
+  //   }
+  // }
 
 }
