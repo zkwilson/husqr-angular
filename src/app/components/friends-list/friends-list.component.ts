@@ -55,6 +55,7 @@ export class FriendsListComponent implements OnInit {
       })
     ).subscribe((nonfriends) => (this.nonFriends = nonfriends));
     console.log(this.nonFriends);
+    console.log(this.friends);
   }
 
 

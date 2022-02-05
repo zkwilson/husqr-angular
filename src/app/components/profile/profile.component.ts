@@ -13,6 +13,7 @@ import {FriendsService} from "../../services/friends.service";
 export class ProfileComponent implements OnInit {
   profile: User | undefined
   authenticated: boolean = false
+  friend: boolean = false
 
   constructor(private activatedRoute: ActivatedRoute,
               private userService: UsersService,
@@ -24,7 +25,14 @@ export class ProfileComponent implements OnInit {
       if (id) {
         this.profile = this.userService.getUserById(id)
       }
+      let friends = this.friendService.getFriendsByActiveUserId(this.activeUserService.getActiveUser());
+      if (id) {
+        if (friends.includes(id)) {
+          this.friend = true;
+        }
+      }
     })
+
   }
 
   ngOnInit(): void {
