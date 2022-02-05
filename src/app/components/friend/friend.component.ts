@@ -13,9 +13,14 @@ import {ActiveUserService} from "../../services/active-user.service";
 })
 export class FriendComponent implements OnInit {
   @Input() friendObj: User | undefined
+  nonFriends: User[] | undefined
 
 
-  constructor(private router: Router) {}
+  constructor(private router: Router,
+              private userService: UsersService) {
+    this.nonFriends = this.userService.getNonFriendUsers();
+    console.log(this.nonFriends); //  This is not working. get non friend users is returning friends
+}
 
 
   ngOnInit(): void {

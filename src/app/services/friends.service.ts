@@ -1,11 +1,10 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject} from "rxjs";
-import {User} from "../interfaces/user";
 import {LocalStorageService} from "./local-storage.service";
-import {initialUsers} from "../seeds/users";
 import {ActiveUserService} from "./active-user.service";
 import {Friend} from "../interfaces/friend";
 import {initialFriends} from "../seeds/friends";
+import { v4 as uuidv4 } from 'uuid';
 
 const STORAGE_KEY = 'friends';
 
@@ -38,6 +37,16 @@ export class FriendsService {
     return this._friendsSource.getValue();
   }
 
+  addFriend(activeId: string, friendId: string): void {
+    this._setFriends([
+      ...this.getFriends(),
+      {
+        id: uuidv4(),
+        pair: [activeId, friendId]
+      }
+    ]);
+
+  }
 
   removeFriend(id: string): void {
     this._setFriends(this.getFriends().reduce<Friend[]>((acc, cur) => {

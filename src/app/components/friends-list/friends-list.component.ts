@@ -18,7 +18,7 @@ export class FriendsListComponent implements OnInit {
   friends$: Subscription
   friends: (User | undefined)[] | undefined;
   users$: Subscription
-  nonFriends: User [] | undefined;
+  @Input() nonFriends: User [] | undefined;
 
 
   constructor(
@@ -54,8 +54,6 @@ export class FriendsListComponent implements OnInit {
         return user.filter((user) => !this.friends?.includes(user) && user.id !== this.activeUserService.getActiveUser())
       })
     ).subscribe((nonfriends) => (this.nonFriends = nonfriends));
-    console.log(this.nonFriends);
-    console.log(this.friends);
   }
 
 
@@ -70,4 +68,5 @@ export class FriendsListComponent implements OnInit {
   trackById(index: number, friend: any): number {
     return friend.id;
   }
+
 }
