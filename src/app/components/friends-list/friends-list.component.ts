@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {User} from "../../interfaces/user";
 import {initialUsers} from "../../seeds/users";
 import {UsersService} from "../../services/users.service";
@@ -12,10 +12,14 @@ import {ActiveUserService} from "../../services/active-user.service";
   templateUrl: './friends-list.component.html',
   styleUrls: ['./friends-list.component.scss']
 })
+
 export class FriendsListComponent implements OnInit {
 
   friends$: Subscription
   friends: (User | undefined)[] | undefined;
+  users$: Subscription
+  nonFriends: User [] | undefined;
+
 
   constructor(
     private userService: UsersService,
@@ -23,6 +27,7 @@ export class FriendsListComponent implements OnInit {
     private friendsService: FriendsService
   ) {
     const activeUserId = this.activeUserService.getActiveUser();
+
     this.friends$ = this.friendsService.friends$
       .pipe(
         map((friends) => {
@@ -43,6 +48,13 @@ export class FriendsListComponent implements OnInit {
         })
       )
       .subscribe((friends) => (this.friends = friends));
+
+    this.users$ = this.userService.users$.pipe(
+      map((user) => {
+        return user.filter((user) => !this.friends?.includes(user) && user.id !== this.activeUserService.getActiveUser())
+      })
+    ).subscribe((nonfriends) => (this.nonFriends = nonfriends));
+    console.log(this.nonFriends);
   }
 
 

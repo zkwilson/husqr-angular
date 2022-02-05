@@ -38,6 +38,7 @@ export class FriendsService {
     return this._friendsSource.getValue();
   }
 
+
   removeFriend(id: string): void {
     this._setFriends(this.getFriends().reduce<Friend[]>((acc, cur) => {
       const activeUserId = this.activeUser.getActiveUser();

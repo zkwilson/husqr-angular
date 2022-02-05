@@ -4,3 +4,7 @@
 <div class="friends-list">
   <app-friend *ngFor="let friend of friends; trackBy: trackById" [friendObj]="friend"></app-friend>
 </div>
+<div *ngIf="nonFriends">
+  <h1>Other Husqr's You May Know</h1>
+  <app-friend *ngFor="let nonFriend of nonFriends;" [friendObj]="nonFriend"></app-friend>
+</div>

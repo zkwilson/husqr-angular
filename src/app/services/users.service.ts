@@ -59,9 +59,14 @@ export class UsersService {
     } else {
       return undefined
     }
-
   }
 
+  getNonFriendUsers(): User[] {
+    let users = this.getUsers();
+    let friends = this.localStorage.getItem('friends');
+    users = users.filter((user) => !friends?.includes(user) && user.id !== this.localStorage.getItem('activeUser'));
+    return users;
+  }
   // getLoggedIn() {
   //   return this.loggedIn;
   // }

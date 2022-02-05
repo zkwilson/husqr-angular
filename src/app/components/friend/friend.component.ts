@@ -2,6 +2,9 @@ import {Component, Input, OnInit} from '@angular/core';
 import {User} from "../../interfaces/user";
 import {Router} from "@angular/router";
 import {UsersService} from "../../services/users.service";
+import {map, Subscription} from "rxjs";
+import {FriendsService} from "../../services/friends.service";
+import {ActiveUserService} from "../../services/active-user.service";
 
 @Component({
   selector: 'app-friend',
@@ -11,9 +14,9 @@ import {UsersService} from "../../services/users.service";
 export class FriendComponent implements OnInit {
   @Input() friendObj: User | undefined
 
-  constructor(private router: Router) {
 
-  }
+  constructor(private router: Router) {}
+
 
   ngOnInit(): void {
   }
