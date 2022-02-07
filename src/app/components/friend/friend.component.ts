@@ -19,7 +19,7 @@ export class FriendComponent implements OnInit {
   constructor(private router: Router,
               private userService: UsersService) {
     this.nonFriends = this.userService.getNonFriendUsers();
-    console.log(this.nonFriends); //  This is not working. get non friend users is returning friends
+    console.log(this.nonFriends);
 }
 
 

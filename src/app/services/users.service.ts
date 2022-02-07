@@ -3,6 +3,8 @@ import {BehaviorSubject} from "rxjs";
 import {User} from "../interfaces/user";
 import {initialUsers} from "../seeds/users";
 import {LocalStorageService} from "./local-storage.service";
+import {ActiveUserService} from "./active-user.service";
+import {FriendsService} from "./friends.service";
 
 
 @Injectable({
@@ -15,7 +17,9 @@ export class UsersService {
 
   //private loggedIn:boolean = false;
 
-  constructor(private localStorage: LocalStorageService) {
+  constructor(private localStorage: LocalStorageService,
+              private activeUserService: ActiveUserService,
+              private friendsService: FriendsService) {
     const users: User[] = this.localStorage.getItem('users');
     if (users?.length) {
       this._setUsers(users);
@@ -61,13 +65,10 @@ export class UsersService {
     }
   }
 
-  getNonFriendUsers(): User[] {
-    let users = this.getUsers();
-    let friends = this.localStorage.getItem('friends');
-    users = users.filter((user) => !friends?.includes(user) && user.id !== this.localStorage.getItem('activeUser'));
-    return users;
+  getNonFriendUsers(): User[] | undefined {
+    const id = this.activeUserService.getActiveUser();
+    let friends = this.friendsService.getFriendsByActiveUserId(id);
+    let allUsers = this.getUsers();
+    return allUsers.filter((user) => !friends.includes(user.id) && user.id !== id);
   }
-  // getLoggedIn() {
-  //   return this.loggedIn;
-  // }
 }
