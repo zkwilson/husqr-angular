@@ -21,6 +21,7 @@ import {EditComponent} from './components/edit/edit.component';
 import {LoginComponent} from './components/login/login.component';
 import {UserGuardGuard} from "./guards/user-guard.guard";
 import {RegisterComponent} from './components/register/register.component';
+import { ViewHusqComponent } from './components/view-husq/view-husq.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import {RegisterComponent} from './components/register/register.component';
     ComposeComponent,
     EditComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ViewHusqComponent
   ],
   imports: [
     BrowserModule,

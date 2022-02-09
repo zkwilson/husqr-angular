@@ -12,7 +12,8 @@ export const initialHusqs: Husq[] = [
     id: '2',
     userId: '2',
     time: new Date(),
-    message: 'Test 456456'
+    message: 'Test 456456',
+    repliesTo: '1'
   },
   {
     id: '3',

@@ -26,7 +26,7 @@ export class TimelineComponent implements OnInit, OnDestroy {
       .pipe(
         map((husqs) => {
           const friends = this.friendService.getFriendsByActiveUserId(activeUserId);
-          return husqs.filter((husq) => friends.includes(husq.userId) || husq.userId === activeUserId);
+          return husqs.filter((husq) => !husq.repliesTo && friends.includes(husq.userId) || husq.userId === activeUserId);
         }),
         map((husqs) => {
           return husqs.map((husq) => {
@@ -48,7 +48,5 @@ export class TimelineComponent implements OnInit, OnDestroy {
   trackById(index: number, husq: HusqWithName): string {
     return husq.id;
   }
-
-
 
 }

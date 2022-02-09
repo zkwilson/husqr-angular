@@ -17,4 +17,7 @@
       <button (click)="saveReply()" class="input-group-text">Reply</button>
     </div>
   </div>
+  <div *ngIf="husqObj">
+    <a *ngIf="replies?.includes(husqObj.userId)" (click)="navigateToHusq()">View Replies</a>
+  </div>
 </div>

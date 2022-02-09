@@ -3,7 +3,7 @@ export interface Husq {
   userId: string
   time: Date
   message: string
-  repliesto?: string
+  repliesTo?: string
 }
 
 export interface HusqWithName extends Husq {

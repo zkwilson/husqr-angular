@@ -19,12 +19,12 @@ img {
   max-width: 85px;
 }
 
-.row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
-}
+//.row {
+//  display: flex;
+//  flex-direction: row;
+//  flex-wrap: wrap;
+//  width: 100%;
+//}
 
 a {
   text-decoration: none;
@@ -34,9 +34,16 @@ a {
   cursor: pointer;
 }
 
-.column {
-  display: flex;
-  flex-direction: column;
-  flex-basis: 100%;
-  flex: 1;
+//.column {
+//  display: flex;
+//  flex-direction: column;
+//  flex-basis: 100%;
+//  flex: 1;
+//}
+.add-btn-div {
+  max-width: 100%;
+}
+button {
+  align-self: flex-end;
+  margin-left: 3.5em;
 }

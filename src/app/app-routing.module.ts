@@ -9,12 +9,14 @@ import {EditComponent} from "./components/edit/edit.component";
 import {LoginComponent} from "./components/login/login.component";
 import {UserGuardGuard} from "./guards/user-guard.guard";
 import {RegisterComponent} from "./components/register/register.component";
+import {ViewHusqComponent} from "./components/view-husq/view-husq.component";
 
 const routes: Routes = [
 
   {path: '', component: LoginComponent, pathMatch: 'full'},
   {path: 'register', component: RegisterComponent, pathMatch: 'full'},
   {path: 'timeline', component: TimelineComponent, pathMatch: 'full', canActivate: [UserGuardGuard]},
+  {path: 'husq/:husqId', component: ViewHusqComponent, canActivate: [UserGuardGuard]},
   {path: 'friends', component: FriendsListComponent, pathMatch: 'full', canActivate: [UserGuardGuard]},
   {path: 'profile/:userId', component: ProfileComponent, canActivate: [UserGuardGuard]},
   {path: 'compose', component: ComposeComponent, pathMatch: 'full', canActivate: [UserGuardGuard]},

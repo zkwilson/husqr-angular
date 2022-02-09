@@ -5,6 +5,7 @@ import {BehaviorSubject} from "rxjs";
 import {LocalStorageService} from "./local-storage.service";
 import {User} from "../interfaces/user";
 import {initialUsers} from "../seeds/users";
+import {Friend} from "../interfaces/friend";
 
 @Injectable({
   providedIn: 'root'
@@ -28,28 +29,43 @@ export class TimelineService {
     this.localStorage.setItem('husqs', husqs)
   }
 
-  getHusq() {
+  getHusqs() {
     return this._husqSource.getValue()
   }
 
   addHusq(husq: Husq) {
-    const husqs = [...this.getHusq(), husq]
+    const husqs = [...this.getHusqs(), husq]
     this._setHusqs(husqs)
   }
 
   removeHusq(husqId: string): void {
     const husqs = [
-      ...this.getHusq().filter(husq => husq.id !== husqId)
+      ...this.getHusqs().filter(husq => husq.id !== husqId)
     ]
     this._setHusqs(husqs)
   }
 
   getHusqById(id: string): Husq | undefined {
-    return this.getHusq().find(husq => husq.id === id)
+    return this.getHusqs().find(husq => husq.id === id)
   }
 
   getHusqsByUserId(userId: string): Husq[] {
-    return this.getHusq().filter(husq => husq.userId === userId)
+    return this.getHusqs().filter(husq => husq.userId === userId)
+  }
+
+  getHusqIdOfReplies(): string[] | undefined {
+    return this.getHusqs().reduce<string[]>((acc, cur) => {
+      if (cur.repliesTo) {
+        acc.push(cur.repliesTo)
+      }
+      return acc
+    },[])
+  }
+
+  getRepliesToHusq(id: string): Husq[] | undefined  {
+    let husqs = this.getHusqs();
+    husqs = husqs.filter((husq) => husq.repliesTo?.includes(id))
+    return husqs;
   }
 }
 
