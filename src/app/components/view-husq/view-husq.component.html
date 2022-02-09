@@ -1,0 +1,7 @@
+<app-husq *ngIf="husq"
+          [husqObj]="husq"
+          class="row justify-content-center"></app-husq>
+<app-husq *ngFor="let husq of replies;"
+          [husqObj]="husq"
+          class="row justify-content-center"></app-husq>
+
