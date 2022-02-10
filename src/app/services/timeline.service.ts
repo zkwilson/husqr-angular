@@ -3,9 +3,7 @@ import {Husq} from "../interfaces/husq";
 import {initialHusqs} from "../seeds/husq";
 import {BehaviorSubject} from "rxjs";
 import {LocalStorageService} from "./local-storage.service";
-import {User} from "../interfaces/user";
-import {initialUsers} from "../seeds/users";
-import {Friend} from "../interfaces/friend";
+
 
 @Injectable({
   providedIn: 'root'
@@ -67,6 +65,20 @@ export class TimelineService {
     husqs = husqs.filter((husq) => husq.repliesTo?.includes(id))
     return husqs;
   }
+
+  getRepliesToReplies(id: string): string[] {
+    let result: string [] = [];
+    let i = 0;
+    let initialReplies = this.getRepliesToHusq(id);
+    if (initialReplies) {
+      for (i =0 ; i < initialReplies.length; i++) {
+        result.push(initialReplies[i].id)
+        result = result.concat(this.getRepliesToReplies(initialReplies[i].id));
+      }
+    }
+    return result;
+  }
 }
+
 
 

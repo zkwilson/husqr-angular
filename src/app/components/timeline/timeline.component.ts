@@ -3,7 +3,6 @@ import {Husq, HusqWithName} from "../../interfaces/husq";
 import {TimelineService} from "../../services/timeline.service";
 import {map, Subscription} from "rxjs";
 import {UsersService} from "../../services/users.service";
-import {User} from "../../interfaces/user";
 import {FriendsService} from "../../services/friends.service";
 import {ActiveUserService} from "../../services/active-user.service";
 
@@ -26,7 +25,9 @@ export class TimelineComponent implements OnInit, OnDestroy {
       .pipe(
         map((husqs) => {
           const friends = this.friendService.getFriendsByActiveUserId(activeUserId);
-          return husqs.filter((husq) => !husq.repliesTo && friends.includes(husq.userId) || husq.userId === activeUserId);
+          return husqs.filter((husq) =>
+            !husq.repliesTo && friends.includes(husq.userId) || husq.userId === activeUserId
+            && !husq.repliesTo);
         }),
         map((husqs) => {
           return husqs.map((husq) => {

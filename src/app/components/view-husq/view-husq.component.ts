@@ -28,26 +28,29 @@ export class ViewHusqComponent implements OnInit {
       }
     })
     if (this.husq?.id) {
-      this.replies = this.timelineService.getRepliesToHusq(this.husq.id);
-      if(this.replies) {
-        this.replies = this.replies.map((husq) => {
+      let replyArr: Husq[] = [];
+      let arrOfRepliesByHusqId = this.timelineService.getRepliesToReplies(this.husq.id);
+      if (arrOfRepliesByHusqId){
+        arrOfRepliesByHusqId.forEach((reply) => {
+        if (reply) {
+          let currentReply = this.timelineService.getHusqById(reply);
+          console.log(currentReply)
+          if (currentReply) {
+            replyArr.push(currentReply)
+          }
+        }
+      })}
+      if (replyArr) {
+        this.replies = replyArr.map((husq) => {
           const user = this.userService.getUserById(husq.userId);
-          console.log(user)
           return {...husq, name: user?.name}
         })
       }
+      console.log(this.replies);
     }
-    console.log(this.replies)
   }
 
-  // return husqs.map((husq) => {
-  // const user = this.userService.getUserById(husq.userId);
-  // return {...husq, name: user?.name}
-
-  ngOnInit(): void {
-
-  }
-
+  ngOnInit(): void {}
 
 }
 

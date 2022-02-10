@@ -24,7 +24,6 @@ export class HusqComponent implements OnInit {
               private router: Router) {
     this.activeUserId = this.activeUserService.getActiveUser();
     this.replies = this.timelineService.getHusqIdOfReplies();
-    console.log(this.replies)
   }
 
   ngOnInit(): void {}
