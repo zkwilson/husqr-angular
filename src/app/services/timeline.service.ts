@@ -57,10 +57,10 @@ export class TimelineService {
         acc.push(cur.repliesTo)
       }
       return acc
-    },[])
+    }, [])
   }
 
-  getRepliesToHusq(id: string): Husq[] | undefined  {
+  getRepliesToHusq(id: string): Husq[] | undefined {
     let husqs = this.getHusqs();
     husqs = husqs.filter((husq) => husq.repliesTo?.includes(id))
     return husqs;
@@ -71,7 +71,7 @@ export class TimelineService {
     let i = 0;
     let initialReplies = this.getRepliesToHusq(id);
     if (initialReplies) {
-      for (i =0 ; i < initialReplies.length; i++) {
+      for (i = 0; i < initialReplies.length; i++) {
         result.push(initialReplies[i].id)
         result = result.concat(this.getRepliesToReplies(initialReplies[i].id));
       }

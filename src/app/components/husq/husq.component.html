@@ -1,8 +1,8 @@
 <div *ngIf="husqObj" class="col-6 border border-secondary bg-dark text-light" id="husq">
   <div class="header">
-    <img src="https://avatars.dicebear.com/api/initials/{{husqObj.name}}.svg">
-    <p class="husq-name">{{husqObj.name}}</p>
-    <p class="husq-time">{{husqObj.time.toLocaleString()}}</p>
+    <img src="https://avatars.dicebear.com/api/initials/{{husqObj.userId | username}}.svg">
+    <p class="husq-name">{{husqObj.userId | username}}</p>
+    <p class="husq-time">{{husqObj.time | date: "MMM dd, YYYY h:mm a"}}</p>
     <button *ngIf="activeUserId === husqObj.userId" (click)="removeHusq()" class="input-group-text bg-dark text-danger"
             id="delete-btn">&times;
     </button>
@@ -12,12 +12,13 @@
     <p>{{reply}}</p>
   </div>
   <div class="input-group mb-3">
-    <input [(ngModel)]="tempReply" type="text" class="form-control" placeholder="Reply to {{husqObj.name}}">
+    <input [(ngModel)]="tempReply" type="text" class="form-control" placeholder="Reply to {{husqObj.userId | username}}">
     <div class="input-group-append">
       <button (click)="saveReply()" class="input-group-text">Reply</button>
     </div>
   </div>
   <div *ngIf="husqObj">
-    <a *ngIf="replies?.includes(husqObj.userId)" (click)="navigateToHusq()">View Replies</a>
+    <a *ngIf="replies?.includes(husqObj.id)" (click)="navigateToHusq()">View comments</a>
+    <app-like-button (likeEvent)="addLike()"></app-like-button>
   </div>
 </div>

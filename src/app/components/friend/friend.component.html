@@ -2,12 +2,12 @@
   <div>
     <img src="https://avatars.dicebear.com/api/initials/{{ friendObj.name }}.svg">
   </div>
-    <div class="friend-body">
-      <a (click)="navigateToUser()">{{ friendObj.name }}</a>
-      <p>{{ friendObj.location }}</p>
-    </div>
+  <div class="friend-body">
+    <a (click)="navigateToUser()">{{ friendObj.name }}</a>
+    <p>{{ friendObj.location }}</p>
+  </div>
   <div>
-      <button *ngIf="nonFriend?.includes(friendObj)" (click)="addFriend(activeUser, friendObj.id)">Add</button>
+    <button *ngIf="nonFriend?.includes(friendObj)" (click)="addFriend(activeUser, friendObj.id)">Add</button>
   </div>
 </div>
 

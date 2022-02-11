@@ -13,7 +13,7 @@ import {ActiveUserService} from "../../services/active-user.service";
 })
 export class TimelineComponent implements OnInit, OnDestroy {
   husqs$: Subscription
-  husqs: HusqWithName[] | undefined;
+  husqs: Husq[] | undefined;
 
   constructor(private timelineService: TimelineService,
               private userService: UsersService,
@@ -29,12 +29,6 @@ export class TimelineComponent implements OnInit, OnDestroy {
             !husq.repliesTo && friends.includes(husq.userId) || husq.userId === activeUserId
             && !husq.repliesTo);
         }),
-        map((husqs) => {
-          return husqs.map((husq) => {
-            const user = this.userService.getUserById(husq.userId);
-            return {...husq, name: user?.name}
-          })
-        })
       ).subscribe(husqs => this.husqs = husqs)
   }
 
@@ -46,7 +40,7 @@ export class TimelineComponent implements OnInit, OnDestroy {
   }
 
 
-  trackById(index: number, husq: HusqWithName): string {
+  trackById(index: number, husq: Husq): string {
     return husq.id;
   }
 

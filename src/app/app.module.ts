@@ -21,7 +21,10 @@ import {EditComponent} from './components/edit/edit.component';
 import {LoginComponent} from './components/login/login.component';
 import {UserGuardGuard} from "./guards/user-guard.guard";
 import {RegisterComponent} from './components/register/register.component';
-import { ViewHusqComponent } from './components/view-husq/view-husq.component';
+import {ViewHusqComponent} from './components/view-husq/view-husq.component';
+import { DatePipe } from '@angular/common';
+import { UsernamePipe } from './pipes/username.pipe';
+import { LikeButtonComponent } from './components/like-button/like-button.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,9 @@ import { ViewHusqComponent } from './components/view-husq/view-husq.component';
     EditComponent,
     LoginComponent,
     RegisterComponent,
-    ViewHusqComponent
+    ViewHusqComponent,
+    UsernamePipe,
+    LikeButtonComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +53,7 @@ import { ViewHusqComponent } from './components/view-husq/view-husq.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [UserGuardGuard],
+  providers: [UserGuardGuard, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule {

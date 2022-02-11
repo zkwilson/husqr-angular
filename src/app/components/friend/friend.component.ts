@@ -32,12 +32,13 @@ export class FriendComponent implements OnInit {
             acc.push(cur);
           }
           return acc
-        },[])
+        }, [])
       })
     ).subscribe((user) => this.nonFriend = user);
 
   }
-      ngOnInit(): void {
+
+  ngOnInit(): void {
   }
 
   navigateToUser() {
@@ -48,7 +49,7 @@ export class FriendComponent implements OnInit {
   }
 
   addFriend(activeId: string | undefined, friendId: string) {
-    if(activeId) {
+    if (activeId) {
       this.friendsService.addFriend(activeId, friendId);
     }
   }

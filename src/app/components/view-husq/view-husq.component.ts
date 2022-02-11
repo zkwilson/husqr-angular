@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {Husq, HusqWithName} from "../../interfaces/husq";
 import {TimelineService} from "../../services/timeline.service";
@@ -20,26 +20,29 @@ export class ViewHusqComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe((params) => {
       const husqId = params.get('husqId');
       if (husqId) {
-        const user = this.userService.getUserById(husqId);
         this.husq = this.timelineService.getHusqById(husqId)
         if (this.husq) {
-          this.husq.name = user?.name;
+          const user = this.userService.getUserById(this.husq?.userId);
+          if (this.husq) {
+            this.husq.name = user?.name;
+          }
         }
       }
     })
     if (this.husq?.id) {
       let replyArr: Husq[] = [];
       let arrOfRepliesByHusqId = this.timelineService.getRepliesToReplies(this.husq.id);
-      if (arrOfRepliesByHusqId){
+      if (arrOfRepliesByHusqId) {
         arrOfRepliesByHusqId.forEach((reply) => {
-        if (reply) {
-          let currentReply = this.timelineService.getHusqById(reply);
-          console.log(currentReply)
-          if (currentReply) {
-            replyArr.push(currentReply)
+          if (reply) {
+            let currentReply = this.timelineService.getHusqById(reply);
+            console.log(currentReply)
+            if (currentReply) {
+              replyArr.push(currentReply)
+            }
           }
-        }
-      })}
+        })
+      }
       if (replyArr) {
         this.replies = replyArr.map((husq) => {
           const user = this.userService.getUserById(husq.userId);
@@ -50,7 +53,8 @@ export class ViewHusqComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
 }
 

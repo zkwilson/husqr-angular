@@ -35,6 +35,20 @@ export const initialHusqs: Husq[] = [
     message: 'This is the second reply to Zaeem',
     repliesTo: '2'
   },
+  {
+    id: '6',
+    userId: '1',
+    time: new Date(),
+    message: 'Reply to Allie on main page',
+    repliesTo: '3'
+  },
+  {
+    id: '7',
+    userId: '1',
+    time: new Date(),
+    message: 'Reply to Allies reply',
+    repliesTo: '4'
+  },
 ]
 
 
