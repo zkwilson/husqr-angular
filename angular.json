@@ -75,7 +75,8 @@
               "browserTarget": "Husqr-zane:build:production"
             },
             "development": {
-              "browserTarget": "Husqr-zane:build:development"
+              "browserTarget": "Husqr-zane:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

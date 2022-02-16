@@ -1,0 +1,36 @@
+<section>
+  <p>We will guess your age based on your first name!</p>
+  <p>Country not required</p>
+  <form *ngIf="nameForm" [formGroup]="nameForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name" class="name-label">Name:</label>
+      <input type="text" id="name" formControlName="name" placeholder="Enter First Name">
+<!--      <div *ngIf="nameForm.invalid">-->
+<!--        <span *ngIf="name?.['required']">Name is required</span>-->
+<!--        <span *ngIf="name?.['maxlength']">Name must be less than 20 characters</span>-->
+<!--      </div>-->
+
+
+
+      <label for="country" class="country-label">Country:</label>
+      <input type="text" id="country" formControlName="name" placeholder="Example: US">
+<!--      <div *ngIf="nameForm.invalid">-->
+<!--        <span *ngIf="country?.['maxlength']">Country must be 2 characters</span>-->
+<!--        <span *ngIf="country?.['minlength']">Country must be 2 characters</span>-->
+<!--      </div>-->
+
+
+
+    <div>
+      <button type="submit" [disabled]="nameForm.invalid" class="btn btn-primary">Submit</button>
+    </div>
+    </div>
+  </form>
+</section>
+
+<div *ngIf="age">
+  <p>We guess your age is {{age}} years old</p>
+</div>
+<div *ngIf="name && !age">
+  <p>Unable to find your name in database</p>
+</div>

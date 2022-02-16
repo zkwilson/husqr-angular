@@ -1,0 +1,11 @@
+{
+  "/api": {
+    "target": "https://dashboard.nbshare.io/api/vi/apps/reddit",
+    "secure": true,
+    "pathRewrite": {
+      "^/api": ""
+    },
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
+}

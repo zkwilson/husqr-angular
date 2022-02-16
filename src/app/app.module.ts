@@ -25,6 +25,10 @@ import {ViewHusqComponent} from './components/view-husq/view-husq.component';
 import { DatePipe } from '@angular/common';
 import { UsernamePipe } from './pipes/username.pipe';
 import { LikeButtonComponent } from './components/like-button/like-button.component';
+import { FoxComponent } from './components/fox/fox.component';
+import {HttpClientModule} from "@angular/common/http";
+import { ApiComponent } from './components/api/api.component';
+import { WeatherComponent } from './components/weather/weather.component';
 
 @NgModule({
   declarations: [
@@ -44,16 +48,20 @@ import { LikeButtonComponent } from './components/like-button/like-button.compon
     RegisterComponent,
     ViewHusqComponent,
     UsernamePipe,
-    LikeButtonComponent
+    LikeButtonComponent,
+    FoxComponent,
+    ApiComponent,
+    WeatherComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [UserGuardGuard, DatePipe],
+  providers: [UserGuardGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {
