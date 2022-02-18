@@ -17,7 +17,7 @@ export class WeatherService {
     return this.http.get(environment.weather.baseURL)
   }
 
-  getCors(): Observable<any> {
+  getCors() {
     return this.http.get('/api');
   }
 

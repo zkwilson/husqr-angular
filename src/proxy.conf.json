@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "https://dashboard.nbshare.io/api/vi/apps/reddit",
+    "target": "https://dashboard.nbshare.io/api/v1/apps/reddit",
     "secure": true,
     "pathRewrite": {
       "^/api": ""

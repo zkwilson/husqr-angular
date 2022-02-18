@@ -7,28 +7,25 @@ import {HeaderComponent} from './components/header/header.component';
 import {ContentComponent} from './components/content/content.component';
 import {HusqComponent} from './components/husq/husq.component';
 import {FooterComponent} from './components/footer/footer.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {ProfileComponent} from './components/profile/profile.component';
 import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
 import {TimelineComponent} from './components/timeline/timeline.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {FriendsListComponent} from './components/friends-list/friends-list.component';
 import {FriendComponent} from './components/friend/friend.component';
-import {TimelineService} from "./services/timeline.service";
 import {ComposeComponent} from './components/compose/compose.component';
-import {UsersService} from "./services/users.service";
 import {EditComponent} from './components/edit/edit.component';
 import {LoginComponent} from './components/login/login.component';
 import {UserGuardGuard} from "./guards/user-guard.guard";
 import {RegisterComponent} from './components/register/register.component';
 import {ViewHusqComponent} from './components/view-husq/view-husq.component';
-import { DatePipe } from '@angular/common';
 import { UsernamePipe } from './pipes/username.pipe';
 import { LikeButtonComponent } from './components/like-button/like-button.component';
 import { FoxComponent } from './components/fox/fox.component';
 import {HttpClientModule} from "@angular/common/http";
 import { ApiComponent } from './components/api/api.component';
 import { WeatherComponent } from './components/weather/weather.component';
+import { CardsComponent } from './components/cards/cards.component';
 
 @NgModule({
   declarations: [
@@ -51,12 +48,12 @@ import { WeatherComponent } from './components/weather/weather.component';
     LikeButtonComponent,
     FoxComponent,
     ApiComponent,
-    WeatherComponent
+    WeatherComponent,
+    CardsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule
