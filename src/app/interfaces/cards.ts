@@ -10,4 +10,10 @@ export interface Card {
   value: string
   suit: string
   code: string
+  images: Images[]
+}
+
+export interface Images {
+  svg: string
+  png: string
 }

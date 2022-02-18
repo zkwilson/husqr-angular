@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CardsService} from "../../services/cards.service";
-import {Subscription} from "rxjs";
+import {Card, Deck} from "../../interfaces/cards";
 
 @Component({
   selector: 'app-cards',
@@ -9,53 +9,38 @@ import {Subscription} from "rxjs";
 })
 export class CardsComponent implements OnInit {
 
-  cardsRemaining: number | undefined
-  deckObject: any | undefined
-  cardObject: any | undefined
-  deckId: string | undefined
-  cards: string[] | undefined
+  // cardsRemaining: number | undefined
+  // deckObject: any | undefined
+  // cardObject: any | undefined
+  // deckId: string | undefined
+  // cards: string[] | undefined
+  deck: Deck | undefined
+  cards: Card[] | undefined
 
 
-  constructor(private cardsService: CardsService) {
-    this.cardsService.getOneDeck().subscribe((deck) => {
-      this.deckObject = deck
-      this.cardsRemaining = this.deckObject.remaining
-      this.deckId = this.deckObject.deck_id;})
-  }
+  constructor(private cardsService: CardsService) {}
 
   ngOnInit(): void {
   }
 
   createDeck() {
     this.cardsService.getOneDeck().subscribe((deck) => {
-      this.deckObject = deck
-      this.deckId = this.deckObject.deck_id;
-      this.cardsRemaining = this.deckObject.remaining
-      console.log(this.deckId)
-
+      this.deck = deck;
+      console.log(this.deck);
     })
   }
 
   drawCard() {
-    if (this.deckId) {
-      this.cardsService.drawOne(this.deckId).subscribe((card) => {
-         this.deckObject = card
-        this.cardObject = this.deckObject.cards
-        console.log(this.cardObject)
-        this.cardObject = this.cardObject
-        // this.cardObject = this.deckObject.cards
-        // console.log(this.cardObject)
-        // const image = this.cardObject.image
-        // this.cards = image
-        // this.cardsRemaining = this.cardObject.remaining
-        // console.log(this.cards)
-        // this.deckObject = card
-        // console.log(this.deckObject.cards)
-      })
+    if (this.deck)
+    this.cardsService.drawOne(this.deck?.deck_id).subscribe((deck) => {
+      if(this.deck?.cards) {
+        this.deck.cards.push(deck.cards)
+        this.deck.remaining = deck.remaining
+      } else if (deck.cards) {
+        this.deck = deck;
+      }
+    })
 
-    }
-
-
-
+    console.log(this.deck?.cards)
   }
 }

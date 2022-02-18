@@ -1,7 +1,7 @@
 <span>Click start to create standard deck</span><button class="btn btn-primary" (click)="createDeck()">Start</button>
-<div *ngIf="deckObject">
-  <p> Cards Remaining: {{deckObject?.remaining}}</p>
+<div *ngIf="deck">
+  <p> Cards Remaining: {{deck.remaining}}</p>
 </div>
-<button (click)="drawCard()">draw</button>
-<p>{{deckObject?.cards}}</p>
+<button class="btn btn-primary" (click)="drawCard()">draw</button>
+
 
