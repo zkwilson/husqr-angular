@@ -9,14 +9,8 @@ import {Card, Deck} from "../../interfaces/cards";
 })
 export class CardsComponent implements OnInit {
 
-  // cardsRemaining: number | undefined
-  // deckObject: any | undefined
-  // cardObject: any | undefined
-  // deckId: string | undefined
-  // cards: string[] | undefined
   deck: Deck | undefined
   cards: Card[] | undefined
-
 
   constructor(private cardsService: CardsService) {}
 
@@ -40,7 +34,6 @@ export class CardsComponent implements OnInit {
         this.deck = deck;
       }
     })
-
     console.log(this.deck?.cards)
   }
 }
