@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
   <a class="navbar-brand text-danger">Husqr</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
           aria-expanded="false" aria-label="Toggle navigation">
@@ -7,21 +7,21 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" routerLink="/timeline" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>
+        <a class="nav-link text-light" routerLink="/timeline" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/compose" routerLinkActive="active">Compose</a>
+        <a class="nav-link text-light" routerLink="/compose" routerLinkActive="active">Compose</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/friends" routerLinkActive="active">Friends</a>
+        <a class="nav-link text-light" routerLink="/friends" routerLinkActive="active">Friends</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/profile', activeUserId]" routerLinkActive="active">Profile</a>
+        <a class="nav-link text-light" [routerLink]="['/profile', activeUserId]" routerLinkActive="active">Profile</a>
       </li>
     </ul>
     <ul class="navbar-nav ms-auto">
       <li class="nav-item">
-        <a class="nav-link logout" *ngIf="activeUserId !== undefined" (click)="logout()" routerLinkActive="active">Logout</a>
+        <a class="nav-link logout text-light" *ngIf="activeUserId !== undefined" (click)="logout()" routerLinkActive="active">Logout</a>
       </li>
     </ul>
   </div>

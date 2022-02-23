@@ -1,10 +1,12 @@
 <span>Click start to create standard deck</span><button class="btn btn-primary" (click)="createDeck()">Start</button>
+<button *ngIf="deck" class="btn btn-primary" (click)="drawCard()">draw</button>
 <div *ngIf="deck">
   <p> Cards Remaining: {{deck.remaining}}</p>
 </div>
-<button class="btn btn-primary" (click)="drawCard()">draw</button>
-<!--<div *ngIf="deck?.cards.length" let last = last>-->
-<!--<img src="{{deck?.cards[deck?.cards?.length -1]}}">-->
-<!--</div>-->
+<div *ngIf="deck?.cards">
+<div *ngFor="let item of deck?.cards">
+  <img src="{{item.image}}">
+</div>
+</div>
 
 

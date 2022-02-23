@@ -1,6 +1,7 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {ViewHusqComponent} from './view-husq.component';
+import {RouterTestingModule} from "@angular/router/testing";
 
 describe('ViewHusqComponent', () => {
   let component: ViewHusqComponent;
@@ -8,7 +9,8 @@ describe('ViewHusqComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ViewHusqComponent]
+      declarations: [ViewHusqComponent],
+      imports: [RouterTestingModule]
     })
       .compileComponents();
   });

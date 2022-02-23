@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {CardsService} from "../../services/cards.service";
-import {Card, Deck} from "../../interfaces/cards";
+import {Deck} from "../../interfaces/deck";
+import {Card} from "../../interfaces/card";
+import {Images} from "../../interfaces/image";
 
 @Component({
   selector: 'app-cards',
@@ -10,7 +12,7 @@ import {Card, Deck} from "../../interfaces/cards";
 export class CardsComponent implements OnInit {
 
   deck: Deck | undefined
-  cards: Card[] | undefined
+  // cards: Card[] | undefined
 
   constructor(private cardsService: CardsService) {}
 

@@ -1,6 +1,7 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {HusqComponent} from './husq.component';
+import {RouterTestingModule} from "@angular/router/testing";
 
 describe('HusqComponent', () => {
   let component: HusqComponent;
@@ -8,7 +9,8 @@ describe('HusqComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [HusqComponent]
+      declarations: [HusqComponent],
+      imports: [RouterTestingModule]
     })
       .compileComponents();
   });

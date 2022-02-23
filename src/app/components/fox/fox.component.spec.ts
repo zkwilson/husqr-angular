@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FoxComponent } from './fox.component';
+import {HttpClientModule} from "@angular/common/http";
 
 describe('FoxComponent', () => {
   let component: FoxComponent;
@@ -8,7 +9,8 @@ describe('FoxComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FoxComponent ]
+      declarations: [ FoxComponent ],
+      imports: [HttpClientModule]
     })
     .compileComponents();
   });
