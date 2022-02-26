@@ -6,9 +6,9 @@
   <div>
     <div *ngIf="profile" class="card">
       <img src="https://avatars.dicebear.com/api/gridy/{{ profile.name }}.svg">
-      <h1>{{profile.name}}</h1>
-      <p class="title">{{profile.location}}</p>
-      <p><span>Age: </span>{{profile.age}}</p>
+      <h1 class="name">{{profile.name}}</h1>
+      <p class="location">{{profile.location}}</p>
+      <p><span>Age: </span><span class="age">{{profile.age}}</span></p>
       <a href="http://instagram.com"><i class="fa fa-instagram"></i></a>
       <a href="http://linkedin.com"><i class="fa fa-linkedin"></i></a>
       <a href="http://facebook.com"><i class="fa fa-facebook"></i></a>

@@ -7,7 +7,7 @@
     <p>{{ friendObj.location }}</p>
   </div>
   <div>
-    <button *ngIf="nonFriend?.includes(friendObj)" (click)="addFriend(activeUser, friendObj.id)">Add</button>
+    <button class='add-friend-btn'*ngIf="nonFriend?.includes(friendObj)" (click)="addFriend(activeUser, friendObj.id)">Add</button>
   </div>
 </div>
 
