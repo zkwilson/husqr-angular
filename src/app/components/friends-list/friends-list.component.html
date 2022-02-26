@@ -6,5 +6,5 @@
 </div>
 <div *ngIf="nonFriends">
   <h1>Other Husqr's You May Know</h1>
-  <app-friend *ngFor="let nonFriend of nonFriends;" [friendObj]="nonFriend"></app-friend>
+  <app-friend *ngFor="let nonFriend of nonFriends; trackBy: trackById" [friendObj]="nonFriend" [nonFriend]="nonFriends"></app-friend>
 </div>
