@@ -1,7 +1,8 @@
 #friend {
   margin: auto;
   margin-bottom: 1em;
-  max-width: 30%;
+  width: 400px;
+  height: 100px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .8);
 }
 
@@ -15,16 +16,9 @@ p {
 }
 
 img {
-  max-height: 90px;
-  max-width: 85px;
+  max-height: 100%;
+  max-width: 100%;
 }
-
-//.row {
-//  display: flex;
-//  flex-direction: row;
-//  flex-wrap: wrap;
-//  width: 100%;
-//}
 
 a {
   text-decoration: none;
@@ -34,17 +28,21 @@ a {
   cursor: pointer;
 }
 
-//.column {
-//  display: flex;
-//  flex-direction: column;
-//  flex-basis: 100%;
-//  flex: 1;
-//}
-.add-btn-div {
-  max-width: 100%;
+.image {
+  width:25%;
+  height:100%;
 }
 
+
 button {
-  align-self: flex-end;
+  margin-top: 2em;
   margin-left: 3.5em;
+}
+
+.friend-body {
+  flex-grow: 1;
+}
+
+.button {
+  flex-grow: 1;
 }

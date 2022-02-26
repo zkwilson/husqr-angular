@@ -1,13 +1,13 @@
-<div *ngIf="friendObj" class="header col-6 border border-secondary bg-light text-dark" id="friend">
-  <div>
+<div *ngIf="friendObj" class="header border border-secondary bg-light text-dark" id="friend">
+  <div class="image">
     <img src="https://avatars.dicebear.com/api/initials/{{ friendObj.name }}.svg">
   </div>
   <div class="friend-body">
     <a (click)="navigateToUser()">{{ friendObj.name }}</a>
     <p>{{ friendObj.location }}</p>
   </div>
-  <div>
-    <button class='add-friend-btn'*ngIf="nonFriend?.includes(friendObj)" (click)="addFriend(activeUser, friendObj.id)">Add</button>
+  <div class="button">
+    <button class='add-friend-btn btn btn-primary'*ngIf="nonFriend?.includes(friendObj)" (click)="addFriend(activeUser, friendObj.id)">Add</button>
   </div>
 </div>
 
