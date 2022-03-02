@@ -1,12 +1,13 @@
-<span>Click start to create standard deck</span><button class="btn btn-primary" (click)="createDeck()">Start</button>
+<span>Click start to create standard deck</span>
+<button class="btn btn-primary" (click)="createDeck()">Start</button>
 <button *ngIf="deck" class="btn btn-primary" (click)="drawCard()">draw</button>
 <div *ngIf="deck">
   <p> Cards Remaining: {{deck.remaining}}</p>
 </div>
 <div *ngIf="deck?.cards">
-<div *ngFor="let item of deck?.cards">
-  <img src="{{item.image}}">
-</div>
+  <div *ngFor="let item of deck?.cards">
+    <img src="{{item.image}}">
+  </div>
 </div>
 
 

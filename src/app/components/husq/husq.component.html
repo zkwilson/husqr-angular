@@ -12,7 +12,8 @@
     <p>{{reply}}</p>
   </div>
   <div class="input-group mb-3">
-    <input [(ngModel)]="tempReply" type="text" class="form-control" placeholder="Reply to {{husqObj.userId | username}}">
+    <input [(ngModel)]="tempReply" type="text" class="form-control"
+           placeholder="Reply to {{husqObj.userId | username}}">
     <div class="input-group-append">
       <button (click)="saveReply()" class="input-group-text">Reply</button>
     </div>

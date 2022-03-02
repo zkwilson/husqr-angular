@@ -35,8 +35,8 @@ describe('EditComponent', () => {
 
   beforeEach(async () => {
     const routerSpy = jasmine.createSpyObj('Router', ['navigate']);
-    const userServiceSpy = jasmine.createSpyObj('UsersService',['editUser','getUserById']);
-    const activeUserServiceSpy = jasmine.createSpyObj('ActiveUserService', ['getActiveUser'] )
+    const userServiceSpy = jasmine.createSpyObj('UsersService', ['editUser', 'getUserById']);
+    const activeUserServiceSpy = jasmine.createSpyObj('ActiveUserService', ['getActiveUser'])
 
     await TestBed.configureTestingModule({
       declarations: [EditComponent],
@@ -63,7 +63,7 @@ describe('EditComponent', () => {
 
   });
 
-  it('should create', inject([ActiveUserService],(activeUserService: ActiveUserService) => {
+  it('should create', inject([ActiveUserService], (activeUserService: ActiveUserService) => {
     spyOn(activeUserService, 'getActiveUser').and.returnValue('1');
     expect(component).toBeTruthy();
   }));
@@ -102,7 +102,7 @@ describe('EditComponent', () => {
     expect(component.editForm?.valid).toBeTrue()
   })
 
-  it('submits edit form', inject([ActiveUserService],(activeUserService: ActiveUserService) => {
+  it('submits edit form', inject([ActiveUserService], (activeUserService: ActiveUserService) => {
     spyOn(activeUserService, 'getActiveUser').and.returnValue('1');
 
     component.user = userServiceSpyObj.getUserById('1');
@@ -113,12 +113,11 @@ describe('EditComponent', () => {
     })
 
 
-
     const form = fixture.debugElement.query(By.css('form'));
     form.triggerEventHandler('ngSubmit', null);
 
     expect(routerSpyObj.navigate).toHaveBeenCalledWith(['/profile', undefined])
-   //******************** expect(userServiceSpyObj.editUser).toHaveBeenCalled();
+    //******************** expect(userServiceSpyObj.editUser).toHaveBeenCalled();
   }))
 
   it('adds a like', () => {

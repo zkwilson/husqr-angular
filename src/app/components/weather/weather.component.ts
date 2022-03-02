@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {WeatherService} from "../../services/weather.service";
 
 @Component({
@@ -10,7 +10,7 @@ export class WeatherComponent implements OnInit {
   currentWeather: any | undefined
 
   constructor(private weatherService: WeatherService) {
-    this.weatherService.getWeather().subscribe(wxData =>  {
+    this.weatherService.getWeather().subscribe(wxData => {
       this.currentWeather = wxData;
     })
 

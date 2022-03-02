@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { LikeButtonComponent } from './like-button.component';
+import {LikeButtonComponent} from './like-button.component';
 
 describe('LikeButtonComponent', () => {
   let component: LikeButtonComponent;
@@ -8,9 +8,9 @@ describe('LikeButtonComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LikeButtonComponent ]
+      declarations: [LikeButtonComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

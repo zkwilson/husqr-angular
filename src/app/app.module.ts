@@ -19,13 +19,13 @@ import {LoginComponent} from './components/login/login.component';
 import {UserGuardGuard} from "./guards/user-guard.guard";
 import {RegisterComponent} from './components/register/register.component';
 import {ViewHusqComponent} from './components/view-husq/view-husq.component';
-import { UsernamePipe } from './pipes/username.pipe';
-import { LikeButtonComponent } from './components/like-button/like-button.component';
-import { FoxComponent } from './components/fox/fox.component';
+import {UsernamePipe} from './pipes/username.pipe';
+import {LikeButtonComponent} from './components/like-button/like-button.component';
+import {FoxComponent} from './components/fox/fox.component';
 import {HttpClientModule} from "@angular/common/http";
-import { ApiComponent } from './components/api/api.component';
-import { WeatherComponent } from './components/weather/weather.component';
-import { CardsComponent } from './components/cards/cards.component';
+import {ApiComponent} from './components/api/api.component';
+import {WeatherComponent} from './components/weather/weather.component';
+import {CardsComponent} from './components/cards/cards.component';
 
 @NgModule({
   declarations: [

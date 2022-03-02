@@ -7,7 +7,8 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link text-light" routerLink="/timeline" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>
+        <a class="nav-link text-light" routerLink="/timeline" routerLinkActive="active"
+           [routerLinkActiveOptions]="{exact:true}">Home</a>
       </li>
       <li class="nav-item">
         <a id='compose-link' class="nav-link text-light" routerLink="/compose" routerLinkActive="active">Compose</a>
@@ -16,12 +17,14 @@
         <a id='friends-link' class="nav-link text-light" routerLink="/friends" routerLinkActive="active">Friends</a>
       </li>
       <li class="nav-item">
-        <a id="profile-link" class="nav-link text-light" [routerLink]="['/profile', activeUserId]" routerLinkActive="active">Profile</a>
+        <a id="profile-link" class="nav-link text-light" [routerLink]="['/profile', activeUserId]"
+           routerLinkActive="active">Profile</a>
       </li>
     </ul>
     <ul class="navbar-nav ms-auto">
       <li class="nav-item">
-        <a class="nav-link logout text-light" *ngIf="activeUserId !== undefined" (click)="logout()" routerLinkActive="active">Logout</a>
+        <a class="nav-link logout text-light" *ngIf="activeUserId !== undefined" (click)="logout()"
+           routerLinkActive="active">Logout</a>
       </li>
     </ul>
   </div>

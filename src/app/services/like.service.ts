@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {BehaviorSubject} from "rxjs";
 import {LocalStorageService} from "./local-storage.service";
 import {ActiveUserService} from "./active-user.service";
@@ -42,9 +42,9 @@ export class LikeService {
     const like = this.getLikes().find((like) => like.husqId === husqId)
 
     if (like) {
-     this._setLikes([
-       ...this.getLikes().filter((like) => like.husqId !== husqId),
-       {...like, likes: like.likes.add(userId)}
+      this._setLikes([
+        ...this.getLikes().filter((like) => like.husqId !== husqId),
+        {...like, likes: like.likes.add(userId)}
 
       ]);
     } else {

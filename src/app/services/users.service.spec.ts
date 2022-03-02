@@ -7,7 +7,7 @@ describe('UsersService', () => {
   let service: UsersService;
   let users = initialUsers
 
-  let addedUser =   {
+  let addedUser = {
     id: '5',
     name: 'abc',
     username: 'abc',
@@ -52,7 +52,7 @@ describe('UsersService', () => {
     expect(service.getUserById('1')).toEqual(undefined)
   })
 
-  it('should get user by id',() => {
+  it('should get user by id', () => {
     expect(service.getUserById('1')).toEqual(users[0])
   })
 

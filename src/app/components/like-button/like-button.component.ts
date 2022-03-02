@@ -8,7 +8,8 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 export class LikeButtonComponent implements OnInit {
   @Output() likeEvent: EventEmitter<undefined> = new EventEmitter<undefined>()
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

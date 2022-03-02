@@ -1,9 +1,7 @@
-import { Injectable } from '@angular/core';
-import { environment } from "../../environments/environment";
+import {Injectable} from '@angular/core';
+import {environment} from "../../environments/environment";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-
-
 
 
 @Injectable({
@@ -11,7 +9,8 @@ import {Observable} from "rxjs";
 })
 export class WeatherService {
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   getWeather(): Observable<any> {
     return this.http.get(environment.weather.baseURL)

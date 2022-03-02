@@ -16,10 +16,9 @@ export class LocalStorageService {
 
   getItem(key: string): any {
     const item = localStorage.getItem(key);
-    if(item && item != undefined) {
-      return  JSON.parse(item)
-    }
-    else {
+    if (item && item != undefined) {
+      return JSON.parse(item)
+    } else {
       return undefined
     }
   }

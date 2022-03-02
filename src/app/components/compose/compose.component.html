@@ -5,7 +5,8 @@
   </div>
   <div class="compose-body">
     <textarea [(ngModel)]="message" class="compose-message" placeholder="Enter text"></textarea>
-    <button (click)="addHusq()" class="btn btn-primary input-group-text" [disabled]="!message.length || message.length > 240">Husq
+    <button (click)="addHusq()" class="btn btn-primary input-group-text"
+            [disabled]="!message.length || message.length > 240">Husq
     </button>
   </div>
   <div class="input-group mb-3" id="character-limit">
