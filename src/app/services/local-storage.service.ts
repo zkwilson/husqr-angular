@@ -16,7 +16,12 @@ export class LocalStorageService {
 
   getItem(key: string): any {
     const item = localStorage.getItem(key);
-    return item ? JSON.parse(item) : null;
+    if(item && item != undefined) {
+      return  JSON.parse(item)
+    }
+    else {
+      return undefined
+    }
   }
 
   removeItem(key: string): void {
